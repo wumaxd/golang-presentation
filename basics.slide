@@ -1,0 +1,59 @@
+# Basics
+
+## Typing
+
+- Go ist _statically typed_.
+- Datentypen
+    - Numbers
+        - Integers (signed: `int8`, unsigned: `uint8`)
+
+            ```
+            var myIntVar int = 23
+            ```
+        - Floating-Point Numbers
+
+            ```
+            var myFloatVar float64 = 3.14
+            ```
+    - Strings
+
+        ```
+        var myString string = "Hello World"
+        ```
+    - Booleans
+        ```
+        var myBool bool = true
+        ```
+
+## Typing Beispiele
+
+.play basicsTypes.go
+
+## Garbage Collection
+
+## Compilation
+
+.link https://github.com/golang/go/tree/master/src/cmd/compile
+
+## Formatting
+## Concurrency - Goroutines
+Funktionen die gleichzeitig ausgeführt werden können, werden als `goroutine` bezeichnet. Diese sind wie folgt definiert ([proc.go](https://golang.org/src/runtime/proc.go)):
+
+```
+The main concepts are:
+G - goroutine.
+M - worker thread, or machine.
+P - processor, a resource that is required to execute Go code.
+    M must have an associated P to execute Go code, however it can be
+    blocked or in a syscall w/o an associated P.
+```
+
+Eine `goroutine` wird einem Thread zugeordnet, welcher wiederum der physischen CPU zugeordnet wird.
+
+## Concurrency - Goroutines Beispiel
+
+.play basicsGoroutine.go
+
+## Concurrency - Channels
+
+## Fehlerbehandlung (Error interface)

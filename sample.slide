@@ -1,0 +1,38 @@
+# Golang - CIC Themenreihe
+
+Maximilian Schönenberg
+Master-Student - Cloud & Security, IBM Österreich
+Maximilian.Schoenenberg@ibm.com
+https://schoenenberg.dev
+
+Maximilian Wurzer
+Senior Application Consultant, IBM Deutschland
+maximilian.wurzer@ibm.com
+
+Benjamin Waldher
+Benjamin.Waldher@bamf.bund.de
+
+## Welcome
+Hello World!
+
+.play hello.go
+
+This is the first hello world program!
+
+## How to use this presentation
+Install the present-tool:
+```bash
+go get -u golang.org/x/tools/present
+```
+
+And run this tool:
+```bash
+present -play -use_playground
+```
+
+Then navigate with your browser to the url written in the console.
+
+## Some more code..
+Calculating and formatting:
+
+.play math.go
