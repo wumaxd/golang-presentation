@@ -1,0 +1,28 @@
+# Intro to Go
+
+## Basic facts to Go
+
+- distribution
+- famous software developed in go
+- ... 
+
+## History
+
+- developed by google
+  - why?
+  - when?
+- how the language is further developed
+- next steps: generics in go (RFC approved few days ago)
+
+## Features
+
+- statically typed
+- integrated test framework
+- great standard library
+
+## Use cases
+
+- Backend vs Frontend
+  - Microservices
+- Scripting
+- WebAssembly

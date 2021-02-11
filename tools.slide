@@ -1,0 +1,32 @@
+# Go Tools
+
+## The 'go' utility
+
+- build
+- run
+- test
+- vendor
+- cross-compiling
+- CGO & FFI
+- ...
+
+## Go-Playground
+
+[https://play.golang.org/](https://play.golang.org/)
+
+- test
+- share code samples (e.g. Stack Overflow questions: show an example)
+
+## Package-Management
+
+- go modules
+- maybe alternatives like dep
+
+## Online ressources
+
+- https://pkg.go.dev/
+- https://libs.garden/go
+- Github
+- Stack Overflow
+- Reddit
+

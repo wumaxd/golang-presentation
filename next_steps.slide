@@ -1,0 +1,21 @@
+# Further steps with go in your organization
+
+## Pros/Cons of Go
+
+## Typical use cases
+
+- Microservices
+- CLI-Applications
+  - cross-compiling
+  - example: Docker, Kubernetes CLI
+- Container eco-system (Docker, Kubernetes)
+
+## Next steps
+
+- training courses
+- tools you need?
+  - IDE
+  - go runtime installed
+- Teams looking for go developers
+- Where to find this presentation?
+- Homework
