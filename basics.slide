@@ -2,8 +2,8 @@
 
 ## Typing
 
-- Go ist _statically typed_.
-- Datentypen
+- Go is _statically typed_.
+- Data Types
     - Numbers
         - Integers (signed: `int8`, unsigned: `uint8`)
 
@@ -25,7 +25,7 @@
         var myBool bool = true
         ```
 
-## Typing Beispiele
+## Typing Examples
 
 .play basicsTypes.go
 
@@ -37,7 +37,7 @@
 
 ## Formatting
 ## Concurrency - Goroutines
-Funktionen die gleichzeitig ausgeführt werden können, werden als `goroutine` bezeichnet. Diese sind wie folgt definiert ([proc.go](https://golang.org/src/runtime/proc.go)):
+Functions which are executed concurrent are called `goroutine`. These are defined as following ([proc.go](https://golang.org/src/runtime/proc.go)):
 
 ```
 The main concepts are:
@@ -48,7 +48,7 @@ P - processor, a resource that is required to execute Go code.
     blocked or in a syscall w/o an associated P.
 ```
 
-Eine `goroutine` wird einem Thread zugeordnet, welcher wiederum der physischen CPU zugeordnet wird.
+A `goroutine` is assigned to a Thread which is assigned to a physical CPU.
 
 ## Concurrency - Goroutines Beispiel
 
@@ -56,4 +56,4 @@ Eine `goroutine` wird einem Thread zugeordnet, welcher wiederum der physischen C
 
 ## Concurrency - Channels
 
-## Fehlerbehandlung (Error interface)
+## Error interface
