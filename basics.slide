@@ -31,7 +31,8 @@
 
 ## Garbage Collection
 
-The runtime library implements garbage collection, concurrency, stack management, and other critical features of the Go language. 
+- The runtime library implements garbage collection, concurrency, stack management, and other critical features of the Go language.
+- Via `GOGC` the garbage collector can be controlled. 
 
 ## Compilation - Under the hood
 
@@ -57,6 +58,14 @@ Go programs are compiled ahead of time to native machine code
 *Go is statically compiled down to its target’s native machine and mostly outperforms its virtualized (e.g. Java, Kotlin) and interpreted (e.g. JavaScript) counterparts.*
 
 ## Formatting
+
+- `gofmt` is an auto-formatter
+- Formatted code is
+  - easier to **write**
+  - easier to **ready**
+  - easier to **maintain**
+  - **uncontroversial**
+
 ## Concurrency - Goroutines
 Functions which are executed concurrent are called `goroutine`. These are defined as following ([proc.go](https://golang.org/src/runtime/proc.go)):
 
