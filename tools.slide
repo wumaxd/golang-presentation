@@ -1,32 +1,91 @@
 # Go Tools
 
-## The 'go' utility
+## The 'go' utility (1/3)
 
-- build
-- run
-- test
-- vendor
-- cross-compiling
-- CGO & FFI
-- ...
+Compiler, package-manager, formatter, linter, ... all in a **single tool**:
+
+```
+
+        bug         start a bug report
+        build       compile packages and dependencies
+        clean       remove object files and cached files
+        doc         show documentation for package or symbol
+        env         print Go environment information
+        fix         update packages to use new APIs
+        fmt         gofmt (reformat) package sources
+        generate    generate Go files by processing source
+        get         add dependencies to current module and install them
+        install     compile and install packages and dependencies
+        list        list packages or modules
+        mod         module maintenance
+        run         compile and run Go program
+        test        test packages
+        tool        run specified go tool
+        version     print Go version
+        vet         report likely mistakes in packages
+```
+
+## The 'go' utility (2/3)
+
+**`go run`**: Compile and run a program ad-hoc
+- `go run hello.go`
+
+**`go build`**: Compile or cross-compile program
+- `go build hello.go`
+- `GOOS=windows GOARCH=amd64 go build hello.go`
+
+**`go test`**: Run tests
+- `go test ./...`
+
+**`go get`**: Download a dependency of a module and install them
+- `go get -u github.com/google/uuid`
+
+## The 'go' utility (3/3)
+**`go doc`**: Get the docs for a method
+- `go doc http.ListenAndServe`
+```bash
+package http // import "net/http"
+
+func ListenAndServe(addr string, handler Handler) error
+    ListenAndServe listens on the TCP network address addr and then calls Serve
+    with handler to handle requests on incoming connections. Accepted
+    connections are configured to enable TCP keep-alives.
+
+    The handler is typically nil, in which case the DefaultServeMux is used.
+
+    ListenAndServe always returns a non-nil error.
+```
+
+**`go mod`**: Interact with modules
+- `go mod init`
+- `go mod vendor`
+
+//- vendor
+//- CGO & FFI
+//- ...
 
 ## Go-Playground
 
-[https://play.golang.org/](https://play.golang.org/)
-
-- test
+- run small code samples
 - share code samples (e.g. Stack Overflow questions: show an example)
+
+.link https://play.golang.org/
+
+.iframe https://play.golang.org/p/B5ZShtSizEy 300 800
 
 ## Package-Management
 
 - go modules
+  - go.mod and go.sum
 - maybe alternatives like dep
 
-## Online ressources
+## Online resources
 
-- https://pkg.go.dev/
-- https://libs.garden/go
+- Go-Website: [go.dev](https://go.dev) and [golang.org](https://golang.org)
+- Blog: [blog.golang.org](https://blog.golang.org)
+- Package search: [pkg.go.dev](https://pkg.go.dev/)
 - Github
 - Stack Overflow
 - Reddit
+- Libraries (new, top, growing): [https://libs.garden/go](https://libs.garden/go)
 
