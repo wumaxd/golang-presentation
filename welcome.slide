@@ -3,12 +3,9 @@
 ## Agenda
 
 - 11:00 - 11:05 | **Begrüßung**
-- 11:05 - 11:50 | **Grundlagen**
-  - **Historie & Anwendungsfälle von Go**
-  - **Einfache Grundlagen zu Go am Beispiel**
-  - **Werkzeuge**
-- 11:50 - 13:15 | **Hands-on Go**
-- 13:15 - 13:45 | **Go in der Organisation**
+- 11:05 - 11:50 | **Historie & Anwendungsfälle von Go**
+- 11:50 - 13:30 | **Praxis: Mein erstes Go-Programm (inkl. 15 Minuten Pause)**
+- 13:15 - 13:45 | **Erste Schritte, um Go in die eigene Organisation zu bringen**
 - 13:45 - 14:00 | **Fragen**
 
 .image images/home-gopher.png _ 300

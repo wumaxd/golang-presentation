@@ -29,6 +29,23 @@
 
 .play basicsTypes.go
 
+## Structs and Interfaces
+
+- Struct is a type that contains named fields
+  - User-defined data type
+- Interface is a type that defines a method set
+  - Method set: list of methods a type must have in order to implement the interface
+
+## Struct Example
+
+.play basicsStruct.go
+
+## Interface Example
+
+.play basicsInterface.go
+
+## Packages
+
 ## Garbage Collection
 
 - The runtime library implements garbage collection, concurrency, stack management, and other critical features of the Go language.
