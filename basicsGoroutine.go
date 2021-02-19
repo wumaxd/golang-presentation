@@ -8,15 +8,15 @@ import (
 func f(from string) {
 	for i := 0; i < 3; i++ {
 		fmt.Println(from, ":", i)
+		time.Sleep(time.Second)
 	}
 }
 
 func main() {
 
-	f("direct")
-
 	go f("goroutine")
 
-	time.Sleep(time.Second)
+	f("direct")
+
 	fmt.Println("done")
 }
