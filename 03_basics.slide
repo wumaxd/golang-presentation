@@ -27,7 +27,7 @@
 
 ## Typing Examples
 
-.play basicsTypes.go
+.play presentation_code/basicsTypes.go
 
 ## Structs and Interfaces
 
@@ -38,11 +38,11 @@
 
 ## Struct Example
 
-.play basicsStruct.go
+.play presentation_code/basicsStruct.go
 
 ## Interface Example
 
-.play basicsInterface.go
+.play presentation_code/basicsInterface.go
 
 ## Packages
 
@@ -99,7 +99,7 @@ A `goroutine` is assigned to a Thread which is assigned to a physical CPU.
 
 ## Concurrency - Goroutines Example
 
-.play basicsGoroutine.go
+.play presentation_code/basicsGoroutine.go
 
 ## Concurrency - Channels
 
@@ -107,14 +107,14 @@ A `goroutine` is assigned to a Thread which is assigned to a physical CPU.
 
 ## Concurrency - Channels Example
 
-.play basicsChannels.go
+.play presentation_code/basicsChannels.go
 
 ## Concurrency - Channels Direction & Buffer
 
 - Channels can be directed - only send or only receive
 - Channels are by default _unbuffered_ - only accept sends `(chan <-)` if there is a corresponding receive `(<- chan)` ready
 
-.play basicsBuffer.go
+.play presentation_code/basicsBuffer.go
 
 ## Error interface
 
