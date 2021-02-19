@@ -1,28 +1,79 @@
 # Intro to Go
 
-## Basic facts to Go
+Maximilian Schönenberg
+Master@IBM - Security, IBM Österreich
+Maximilian.Schoenenberg@ibm.com
 
-- distribution
-- famous software developed in go
-- ... 
+Benjamin Waldher
+Benjamin.Waldher@bamf.bund.de
+
+## Basic facts about Go
+
+- is a statically typed, compiled programming language
+- developed by Google (Rob Pike, Ken Thompson, Robert Griesemer)
+- 1.0 released in March 2012
+  - guarantees compatibility 
+- Stack Overflow (most wanted): 3 (2020)
+
+Famous software in Go:
+- Docker, Kubernetes (OpenShift, IKS, etc.)
+- InfluxDB, TiDB, CockroachDB
+- Mattermost, Terraform, Hugo
+
+## Why should Go interest me?
+
+## Why was Go developed? (1/2)
+
+- Moore's law is ending
+
+//.image images/moores_law.jpg _ 500
+
+- Demand for performant software is increasing
+
+## Why was Go developed? (2/2)
+
+Let's take a look at Google:
+- huge network loads
+- one mono-repository
+- a few supported languages: (C/C++, Java, Python, JavaScript)
+
+What they needed:
+- statically typed and run-time efficient as C
+- readability and usability as Python and JavaScript
+- high-performance networking and multiprocessing
+
 
 ## History
 
-- developed by google
-  - why?
-  - when?
-- how the language is further developed
-- next steps: generics in go (RFC approved few days ago)
+- started 2007
+- publicly announced 2009
+- 1.0 released in March 2011
+
+Important Steps in development (over the last 10 years):
+- Module support: integrated support for versioning and package distribution
+- WebAssembly support
+
+Next big thing:
+- Generics in Go (RFC approved few days ago)
 
 ## Features
 
-- statically typed
 - integrated test framework
 - great standard library
+  - Networking (TCP,UDP,HTTP,SMTP)
+  - Database (SQL)
+  - Time, Image, Encoding, Crypto, Compression, etc.
+- supports open source development
+  - huge ecosystem of libraries
 
 ## Use cases
 
+- TODO: check with Ben
 - Backend vs Frontend
   - Microservices
+
+.code http-server.go
+
 - Scripting
 - WebAssembly
+- CLI
