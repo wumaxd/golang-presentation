@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basics</title>
+    <meta charset='utf-8'>
+    <script>
+      var notesEnabled =  false ;
+    </script>
+    <script src='./static/slides.js'></script>
+
+    
+
+    <script>
+      
+      if (window["location"] && window["location"]["hostname"] == "talks.golang.org") {
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-11222381-6"]);
+        _gaq.push(["b._setAccount", "UA-49880327-6"]);
+        window.trackPageview = function() {
+          _gaq.push(["_trackPageview", location.pathname+location.hash]);
+          _gaq.push(["b._trackPageview", location.pathname+location.hash]);
+        };
+        window.trackPageview();
+        window.trackEvent = function(category, action, opt_label, opt_value, opt_noninteraction) {
+          _gaq.push(["_trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+          _gaq.push(["b._trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+        };
+      }
+    </script>
+  </head>
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen'>
+
+      <article>
+        <h1>Basics</h1>
+        
+        
+        
+      </article>
+
+  
+  
+      <article >
+      
+        <h3>Typing</h3>
+        <ul>
+<li>Go is <em>statically typed</em>.</li>
+<li>Data Types
+<ul>
+<li>
+<p>Numbers</p>
+<ul>
+<li>
+<p>Integers (signed: <code>int8</code>, unsigned: <code>uint8</code>)</p>
+<pre><code>var myIntVar int = 23
+</code></pre>
+</li>
+<li>
+<p>Floating-Point Numbers</p>
+<pre><code>var myFloatVar float64 = 3.14
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Strings</p>
+<pre><code>var myString string = &quot;Hello World&quot;
+</code></pre>
+</li>
+<li>
+<p>Booleans</p>
+<pre><code>var myBool bool = true
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+      <span class="pagenumber">2</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Typing Examples</h3>
+        
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func main() {</span>
+<span num="6">    var myIntVar int = 23</span>
+<span num="7">    var myFloatVar float64 = 3.14</span>
+<span num="8">    var myString string = &#34;Hello World&#34;</span>
+<span num="9">    var myBool bool = true</span>
+<span num="10"></span>
+<span num="11">    fmt.Println(&#34;Integer:&#34;, myIntVar)</span>
+<span num="12">    fmt.Println(&#34;Float:&#34;, myFloatVar)</span>
+<span num="13"></span>
+<span num="14">    fmt.Println(&#34;String:&#34;, myString)</span>
+<span num="15"></span>
+<span num="16">    fmt.Println(&#34;My bool is&#34;, myBool)</span>
+<span num="17">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">3</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Structs and Interfaces</h3>
+        <ul>
+<li>Struct is a type that contains named fields
+<ul>
+<li>User-defined data type</li>
+</ul>
+</li>
+<li>Interface is a type that defines a method set
+<ul>
+<li>Method set: list of methods a type must have in order to implement the interface</li>
+</ul>
+</li>
+</ul>
+
+      
+      <span class="pagenumber">4</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Struct Example</h3>
+        
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">type person struct {</span>
+<span num="6">    name string</span>
+<span num="7">    age  int</span>
+<span num="8">}</span>
+<span num="9"></span>
+<span num="10">func newPerson(name string) *person {</span>
+<span num="11">    p := person{name: name}</span>
+<span num="12">    p.age = 42</span>
+<span num="13">    return &amp;p</span>
+<span num="14">}</span>
+<span num="15"></span>
+<span num="16">func main() {</span>
+<span num="17"></span>
+<span num="18">    fmt.Println(person{&#34;Bob&#34;, 20})</span>
+<span num="19">    fmt.Println(person{name: &#34;Alice&#34;, age: 30})</span>
+<span num="20">    fmt.Println(newPerson(&#34;Jon&#34;))</span>
+<span num="21">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">5</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Interface Example</h3>
+        
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import (</span>
+<span num="4">    &#34;fmt&#34;</span>
+<span num="5">)</span>
+<span num="6"></span>
+<span num="7">type geometry interface {</span>
+<span num="8">    area() float64</span>
+<span num="9">}</span>
+<span num="10"></span>
+<span num="11">type rect struct {</span>
+<span num="12">    width, height float64</span>
+<span num="13">}</span>
+<span num="14"></span>
+<span num="15">func (r rect) area() float64 {</span>
+<span num="16">    return r.width * r.height</span>
+<span num="17">}</span>
+<span num="18"></span>
+<span num="19">func measure(g geometry) {</span>
+<span num="20">    fmt.Println(g)</span>
+<span num="21">    fmt.Println(g.area())</span>
+<span num="22">}</span>
+<span num="23"></span>
+<span num="24">func main() {</span>
+<span num="25">    r := rect{width: 3, height: 4}</span>
+<span num="26"></span>
+<span num="27">    measure(r)</span>
+<span num="28">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">6</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Packages</h2>
+      
+      <span class="pagenumber">7</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Garbage Collection</h3>
+        <ul>
+<li>The runtime library implements garbage collection, concurrency, stack management, and other critical features of the Go language.</li>
+<li>Via <code>GOGC</code> the garbage collector can be controlled (total heap size relative to reachable objects).</li>
+<li>There is no separate virtual machine.</li>
+</ul>
+
+      
+      <span class="pagenumber">8</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Compilation - Under the hood</h3>
+        <p class="link"><a href="https://github.com/golang/go/tree/master/src/cmd/compile" target="_blank">github.com/golang/go/tree/master/src/cmd/compile</a></p><p>Go programs are compiled ahead of time to native machine code</p>
+<ol>
+<li>Parsing</li>
+<li>Type-checking and AST transformations</li>
+<li>Generic SSA (Static Single Assignment)</li>
+<li>Generating machine code</li>
+</ol>
+
+      
+      <span class="pagenumber">9</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Compilation - Choose your target</h3>
+        <p><strong>One source - Many targets</strong></p>
+<ul>
+<li><code>GOOS=linux</code> - <code>GOARCH=arm</code></li>
+<li><code>GOOS=linux</code> - <code>GOARCH=amd64</code></li>
+<li><code>GOOS=linux</code> - <code>GOARCH=ppc64le</code></li>
+<li><code>GOOS=windows</code> - <code>GOARCH=amd64</code></li>
+<li><code>GOOS=darwin</code> - <code>GOARCH=amd64</code></li>
+</ul>
+<p><em>Go is statically compiled down to its target’s native machine and mostly outperforms its virtualized (e.g. Java, Kotlin) and interpreted (e.g. JavaScript) counterparts.</em></p>
+
+      
+      <span class="pagenumber">10</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Formatting</h3>
+        <ul>
+<li><code>gofmt</code> is an auto-formatter</li>
+<li>Formatted code is
+<ul>
+<li>easier to <strong>write</strong></li>
+<li>easier to <strong>ready</strong></li>
+<li>easier to <strong>maintain</strong></li>
+<li><strong>uncontroversial</strong></li>
+</ul>
+</li>
+</ul>
+
+      
+      <span class="pagenumber">11</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Concurrency - Goroutines</h3>
+        <p>Functions which are executed concurrent are called <code>goroutine</code>. These are defined as following (<a href="https://golang.org/src/runtime/proc.go" target="_blank" rel="noopener">proc.go</a>):</p>
+<pre><code>The main concepts are:
+G - goroutine.
+M - worker thread, or machine.
+P - processor, a resource that is required to execute Go code.
+    M must have an associated P to execute Go code, however it can be
+    blocked or in a syscall w/o an associated P.
+</code></pre>
+<p>A <code>goroutine</code> is assigned to a Thread which is assigned to a physical CPU.</p>
+
+      
+      <span class="pagenumber">12</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Concurrency - Goroutines Example</h3>
+        
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import (</span>
+<span num="4">    &#34;fmt&#34;</span>
+<span num="5">    &#34;time&#34;</span>
+<span num="6">)</span>
+<span num="7"></span>
+<span num="8">func f(from string) {</span>
+<span num="9">    for i := 0; i &lt; 3; i&#43;&#43; {</span>
+<span num="10">        fmt.Println(from, &#34;:&#34;, i)</span>
+<span num="11">        time.Sleep(time.Second)</span>
+<span num="12">    }</span>
+<span num="13">}</span>
+<span num="14"></span>
+<span num="15">func main() {</span>
+<span num="16"></span>
+<span num="17">    go f(&#34;goroutine&#34;)</span>
+<span num="18"></span>
+<span num="19">    f(&#34;direct&#34;)</span>
+<span num="20"></span>
+<span num="21">    fmt.Println(&#34;done&#34;)</span>
+<span num="22">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">13</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Concurrency - Channels</h3>
+        <p><code>Channels</code> provide a way for two <code>goroutines</code> to communicate with each other and synchronize their execution.</p>
+
+      
+      <span class="pagenumber">14</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Concurrency - Channels Example</h3>
+        
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func main() {</span>
+<span num="6"></span>
+<span num="7">    messages := make(chan string)</span>
+<span num="8"></span>
+<span num="9">    go func() { messages &lt;- &#34;ping&#34; }()</span>
+<span num="10"></span>
+<span num="11">    msg := &lt;-messages</span>
+<span num="12">    fmt.Println(msg)</span>
+<span num="13">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">15</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Concurrency - Channels Direction &amp; Buffer</h3>
+        <ul>
+<li>Channels can be directed - only send or only receive</li>
+<li>Channels are by default <em>unbuffered</em> - only accept sends <code>(chan &lt;-)</code> if there is a corresponding receive <code>(&lt;- chan)</code> ready</li>
+</ul>
+
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func main() {</span>
+<span num="6">    messages := make(chan string, 2)</span>
+<span num="7"></span>
+<span num="8">    messages &lt;- &#34;buffered&#34;</span>
+<span num="9">    messages &lt;- &#34;channel&#34;</span>
+<span num="10"></span>
+<span num="11">    fmt.Println(&lt;-messages)</span>
+<span num="12">    fmt.Println(&lt;-messages)</span>
+<span num="13">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">16</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Error interface</h2>
+      
+      <span class="pagenumber">17</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Go by Example</h3>
+        <p class="link"><a href="https://gobyexample.com" target="_blank">gobyexample.com</a></p>
+<div class="image">
+  <img src="images/gobyexample.png">
+</div>
+
+      
+      <span class="pagenumber">18</span>
+      </article>
+  
+  
+
+      <article>
+        <h3>Thank you</h3>
+        
+      </article>
+
+    </section>
+
+    <div id="help">
+      Use the left and right arrow keys or click the left and right
+      edges of the page to navigate between slides.<br>
+      (Press 'H' or navigate to hide this message.)
+    </div>
+
+    
+    
+
+    <script>
+      (function() {
+        
+        if (window["location"] && window["location"]["hostname"] == "talks.golang.org") {
+          var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+          ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+          var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to Go</title>
+    <meta charset='utf-8'>
+    <script>
+      var notesEnabled =  false ;
+    </script>
+    <script src='./static/slides.js'></script>
+
+    
+
+    <script>
+      
+      if (window["location"] && window["location"]["hostname"] == "talks.golang.org") {
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-11222381-6"]);
+        _gaq.push(["b._setAccount", "UA-49880327-6"]);
+        window.trackPageview = function() {
+          _gaq.push(["_trackPageview", location.pathname+location.hash]);
+          _gaq.push(["b._trackPageview", location.pathname+location.hash]);
+        };
+        window.trackPageview();
+        window.trackEvent = function(category, action, opt_label, opt_value, opt_noninteraction) {
+          _gaq.push(["_trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+          _gaq.push(["b._trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+        };
+      }
+    </script>
+  </head>
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen'>
+
+      <article>
+        <h1>Intro to Go</h1>
+        
+        
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Maximilian Schönenberg
+  </p>
+  
+
+          </div>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Benjamin Waldher
+  </p>
+  
+
+          </div>
+        
+      </article>
+
+  
+  
+      <article >
+      
+        <h3>Basic facts about Go</h3>
+        <ul>
+<li>is a statically typed, compiled programming language</li>
+<li>developed by Google (Rob Pike, Ken Thompson, Robert Griesemer)</li>
+<li>1.0 released in March 2012
+<ul>
+<li>guarantees compatibility</li>
+</ul>
+</li>
+<li>Stack Overflow (most wanted): 3 (2020)</li>
+</ul>
+<p>Famous software in Go:</p>
+<ul>
+<li>Docker, Kubernetes (OpenShift, IKS, etc.)</li>
+<li>InfluxDB, TiDB, CockroachDB</li>
+<li>Mattermost, Terraform, Hugo</li>
+</ul>
+
+      
+      <span class="pagenumber">2</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Why should Go interest me?</h2>
+      
+      <span class="pagenumber">3</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Why was Go developed? (1/2)</h3>
+        <ul>
+<li>
+<p>Moore's law is ending</p>
+</li>
+<li>
+<p>Demand for performant software is increasing</p>
+</li>
+</ul>
+
+      
+      <span class="pagenumber">4</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Why was Go developed? (2/2)</h3>
+        <p>Let's take a look at Google:</p>
+<ul>
+<li>huge network loads</li>
+<li>one mono-repository</li>
+<li>a few supported languages: (C/C++, Java, Python, JavaScript)</li>
+</ul>
+<p>What they needed:</p>
+<ul>
+<li>statically typed and run-time efficient as C</li>
+<li>readability and usability as Python and JavaScript</li>
+<li>high-performance networking and multiprocessing</li>
+</ul>
+
+      
+      <span class="pagenumber">5</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>History</h3>
+        <ul>
+<li>started 2007</li>
+<li>publicly announced 2009</li>
+<li>1.0 released in March 2011</li>
+</ul>
+<p>Important Steps in development (over the last 10 years):</p>
+<ul>
+<li>Module support: integrated support for versioning and package distribution</li>
+<li>WebAssembly support</li>
+</ul>
+<p>Next big thing:</p>
+<ul>
+<li>Generics in Go (RFC approved few days ago)</li>
+</ul>
+
+      
+      <span class="pagenumber">6</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Features</h3>
+        <ul>
+<li>integrated test framework</li>
+<li>great standard library
+<ul>
+<li>Networking (TCP,UDP,HTTP,SMTP)</li>
+<li>Database (SQL)</li>
+<li>Time, Image, Encoding, Crypto, Compression, etc.</li>
+</ul>
+</li>
+<li>supports open source development
+<ul>
+<li>huge ecosystem of libraries</li>
+</ul>
+</li>
+</ul>
+
+      
+      <span class="pagenumber">7</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Use cases</h3>
+        <ul>
+<li>TODO: check with Ben</li>
+<li>Backend vs Frontend
+<ul>
+<li>Microservices</li>
+</ul>
+</li>
+</ul>
+
+  <div class="code" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;net/http&#34;</span>
+<span num="4"></span>
+<span num="5">func main() {</span>
+<span num="6">    <b>http.HandleFunc(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) {</b></span>
+<span num="7">        <b>_, _ = w.Write([]byte(&#34;Hello CIC&#34;))</b></span>
+<span num="8">    })</span>
+<span num="9">    <b>http.ListenAndServe(&#34;:80&#34;, nil)</b></span>
+<span num="10">}</span>
+</pre>
+</div>
+<ul>
+<li>Scripting</li>
+<li>WebAssembly</li>
+<li>CLI</li>
+</ul>
+
+      
+      <span class="pagenumber">8</span>
+      </article>
+  
+  
+
+      <article>
+        <h3>Thank you</h3>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Maximilian Schönenberg
+  </p>
+  
+<p class="link"><a href="mailto:Master@IBM%20-%20Security,%20IBM%20%c3%96sterreich" target="_blank">Master@IBM - Security, IBM Österreich</a></p><p class="link"><a href="mailto:Maximilian.Schoenenberg@ibm.com" target="_blank">Maximilian.Schoenenberg@ibm.com</a></p>
+          </div>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Benjamin Waldher
+  </p>
+  
+<p class="link"><a href="mailto:Benjamin.Waldher@bamf.bund.de" target="_blank">Benjamin.Waldher@bamf.bund.de</a></p>
+          </div>
+        
+      </article>
+
+    </section>
+
+    <div id="help">
+      Use the left and right arrow keys or click the left and right
+      edges of the page to navigate between slides.<br>
+      (Press 'H' or navigate to hide this message.)
+    </div>
+
+    
+    
+
+    <script>
+      (function() {
+        
+        if (window["location"] && window["location"]["hostname"] == "talks.golang.org") {
+          var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+          ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+          var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+        }
+      })();
+    </script>
+  </body>
+</html>
