@@ -49,7 +49,8 @@
 ## Garbage Collection
 
 - The runtime library implements garbage collection, concurrency, stack management, and other critical features of the Go language.
-- Via `GOGC` the garbage collector can be controlled. 
+- Via `GOGC` the garbage collector can be controlled (total heap size relative to reachable objects).
+- There is no separate virtual machine.
 
 ## Compilation - Under the hood
 
