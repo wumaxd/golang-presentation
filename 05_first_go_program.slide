@@ -10,3 +10,20 @@
 ## Task
 
 Classical questions like, ggT or *Sieve of Eratosthenes*
+
+## Exercise User
+
+- Create a `struct` with the fields
+  - id (`uint32`)
+  - name (`string`)
+  - surname (`string`)
+  - gopher (`bool`)
+- Create your personal user
+  - `id` ← `1`
+  - `name` and `surname` ← add your name
+  - `gopher` ← obviously, `true`
+- Print the result to STDOUT
+
+## Result User
+
+.iframe https://play.golang.org/p/j0EuuwQuigJ 550 900
