@@ -1,7 +1,10 @@
 {
   "pages": [
     "01_welcome.slide",
-    "02_01_intro.slide",
-    "03_basics.slide"
+    "02_intro.slide",
+    "03_basics.slide",
+    "04_tools.slide",
+    "05_first_go_program.slide",
+    "06_next_steps.slide"
   ]
 }

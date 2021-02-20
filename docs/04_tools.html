@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Go Tools</title>
+    <meta charset='utf-8'>
+    <script>
+      var notesEnabled =  false ;
+    </script>
+    <script src='./static/slides.js'></script>
+
+    
+
+    <script>
+      
+      if (window["location"] && window["location"]["hostname"] == "talks.golang.org") {
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-11222381-6"]);
+        _gaq.push(["b._setAccount", "UA-49880327-6"]);
+        window.trackPageview = function() {
+          _gaq.push(["_trackPageview", location.pathname+location.hash]);
+          _gaq.push(["b._trackPageview", location.pathname+location.hash]);
+        };
+        window.trackPageview();
+        window.trackEvent = function(category, action, opt_label, opt_value, opt_noninteraction) {
+          _gaq.push(["_trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+          _gaq.push(["b._trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+        };
+      }
+    </script>
+  </head>
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen'>
+
+      <article>
+        <h1>Go Tools</h1>
+        
+        
+        
+      </article>
+
+  
+  
+      <article >
+      
+        <h3>The &#39;go&#39; utility (1/3)</h3>
+        <p>Compiler, package-manager, formatter, linter, ... all in a <strong>single tool</strong>:</p>
+<pre><code>
+        bug         start a bug report
+        build       compile packages and dependencies
+        clean       remove object files and cached files
+        doc         show documentation for package or symbol
+        env         print Go environment information
+        fix         update packages to use new APIs
+        fmt         gofmt (reformat) package sources
+        generate    generate Go files by processing source
+        get         add dependencies to current module and install them
+        install     compile and install packages and dependencies
+        list        list packages or modules
+        mod         module maintenance
+        run         compile and run Go program
+        test        test packages
+        tool        run specified go tool
+        version     print Go version
+        vet         report likely mistakes in packages
+</code></pre>
+
+      
+      <span class="pagenumber">2</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>The &#39;go&#39; utility (2/3)</h3>
+        <p><strong><code>go run</code></strong>: Compile and run a program ad-hoc</p>
+<ul>
+<li><code>go run hello.go</code></li>
+</ul>
+<p><strong><code>go build</code></strong>: Compile or cross-compile program</p>
+<ul>
+<li><code>go build hello.go</code></li>
+<li><code>GOOS=windows GOARCH=amd64 go build hello.go</code></li>
+</ul>
+<p><strong><code>go test</code></strong>: Run tests</p>
+<ul>
+<li><code>go test ./...</code></li>
+</ul>
+<p><strong><code>go get</code></strong>: Download a dependency of a module and install them</p>
+<ul>
+<li><code>go get -u github.com/google/uuid</code></li>
+</ul>
+
+      
+      <span class="pagenumber">3</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>The &#39;go&#39; utility (3/3)</h3>
+        <p><strong><code>go doc</code></strong>: Get the docs for a method</p>
+<ul>
+<li><code>go doc http.ListenAndServe</code></li>
+</ul>
+<pre><code class="language-bash">package http // import &quot;net/http&quot;
+
+func ListenAndServe(addr string, handler Handler) error
+    ListenAndServe listens on the TCP network address addr and then calls Serve
+    with handler to handle requests on incoming connections. Accepted
+    connections are configured to enable TCP keep-alives.
+
+    The handler is typically nil, in which case the DefaultServeMux is used.
+
+    ListenAndServe always returns a non-nil error.
+</code></pre>
+<p><strong><code>go mod</code></strong>: Interact with modules</p>
+<ul>
+<li><code>go mod init</code></li>
+<li><code>go mod vendor</code></li>
+</ul>
+
+      
+      <span class="pagenumber">4</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Go-Playground</h3>
+        <ul>
+<li>run small code samples</li>
+<li>share code samples (e.g. Stack Overflow questions: show an example)</li>
+</ul>
+<p class="link"><a href="https://play.golang.org/" target="_blank">play.golang.org/</a></p>
+<iframe src="https://play.golang.org/p/B5ZShtSizEy" height="300" width="800"></iframe>
+
+      
+      <span class="pagenumber">5</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Package-Management - Go has a unique approach to package management</h3>
+        <ul>
+<li>Package management is entirely source based, not artifact based
+-- Instead of referencing a package in a repository, go references source code</li>
+<li>Entirely git based</li>
+<li>Import statement: <code>import 'gitlab.com/my/project'</code></li>
+</ul>
+
+      
+      <span class="pagenumber">6</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Package-Management - Modules</h3>
+        <ul>
+<li>Modules introduced in 1.12 to enable semantic versioning</li>
+<li>Modules still reference source code repositories</li>
+<li>Semantic versioning is enforced</li>
+<li>go.mod file lists dependencies, go.sum maintains hash sums of dependencies</li>
+<li>Sample <code>go.mod</code> file:</li>
+</ul>
+<pre><code>module example.com/my/thing
+
+go 1.12
+
+require example.com/other/thing v1.0.2
+require example.com/new/thing/v2 v2.3.4
+exclude example.com/old/thing v1.2.3
+replace example.com/bad/thing v1.4.5 =&gt; example.com/good/thing v1.4.5
+</code></pre>
+
+      
+      <span class="pagenumber">7</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Online resources</h3>
+        <ul>
+<li>Go-Website: <a href="https://go.dev" target="_blank" rel="noopener">go.dev</a> and <a href="https://golang.org" target="_blank" rel="noopener">golang.org</a></li>
+<li>Blog: <a href="https://blog.golang.org" target="_blank" rel="noopener">blog.golang.org</a></li>
+<li>Package search: <a href="https://pkg.go.dev/" target="_blank" rel="noopener">pkg.go.dev</a></li>
+<li>Github</li>
+<li>Stack Overflow</li>
+<li>Reddit</li>
+<li>Libraries (new, top, growing): <a href="https://libs.garden/go" target="_blank" rel="noopener">https://libs.garden/go</a></li>
+</ul>
+
+      
+      <span class="pagenumber">8</span>
+      </article>
+  
+  
+
+      <article>
+        <h3>Thank you</h3>
+        
+      </article>
+
+    </section>
+
+    <div id="help">
+      Use the left and right arrow keys or click the left and right
+      edges of the page to navigate between slides.<br>
+      (Press 'H' or navigate to hide this message.)
+    </div>
+
+    
+    
+
+    <script>
+      (function() {
+        
+        if (window["location"] && window["location"]["hostname"] == "talks.golang.org") {
+          var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+          ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+          var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -73,11 +73,31 @@ func ListenAndServe(addr string, handler Handler) error
 
 .iframe https://play.golang.org/p/B5ZShtSizEy 300 800
 
-## Package-Management
+## Package-Management - Go has a unique approach to package management
 
-- go modules
-  - go.mod and go.sum
-- maybe alternatives like dep
+- Package management is entirely source based, not artifact based
+-- Instead of referencing a package in a repository, go references source code
+- Entirely git based
+- Import statement: `import 'gitlab.com/my/project'`
+
+## Package-Management - Modules
+
+- Modules introduced in 1.12 to enable semantic versioning
+- Modules still reference source code repositories
+- Semantic versioning is enforced
+- go.mod file lists dependencies, go.sum maintains hash sums of dependencies
+- Sample `go.mod` file:
+
+```
+module example.com/my/thing
+
+go 1.12
+
+require example.com/other/thing v1.0.2
+require example.com/new/thing/v2 v2.3.4
+exclude example.com/old/thing v1.2.3
+replace example.com/bad/thing v1.4.5 => example.com/good/thing v1.4.5
+```
 
 ## Online resources
 

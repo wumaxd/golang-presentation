@@ -223,6 +223,57 @@
       </article>
   
   
+  
+      <article >
+      
+        <h3>Frontend vs. Backend</h3>
+        <ul>
+<li>Go is almost never run by end-users</li>
+<li>Go is used for web backends, infrastructure (i.e. Kubernetes)</li>
+<li>Go is a great choice for developer tools</li>
+<li>Go is also useful as a scripting language</li>
+</ul>
+
+      
+      <span class="pagenumber">9</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Scripting and Tools</h3>
+        <ul>
+<li>Code can be run as a script: <code>go run file.go</code></li>
+<li>Binaries bundle all dependencies</li>
+<li>Binaries are nearly static by default</li>
+<li>Startup time is short</li>
+</ul>
+
+      
+      <span class="pagenumber">10</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Cross-Compilation</h3>
+        <ul>
+<li>Go compiler needs a single flag to build for other platforms
+-- <code>GOOS=darwin go build file.go</code> builds binaries for Mac, without requiring a Mac</li>
+<li>Other architectures are also possible
+-- <code>GOOS=linux GOARCH=arm go build file.go</code> builds an ARM binary</li>
+<li>A single CI process can build a binary for all platforms and architectures</li>
+<li>Resulting binary is very portable
+-- On Linux, binary will only depend on glibc</li>
+</ul>
+
+      
+      <span class="pagenumber">11</span>
+      </article>
+  
+  
 
       <article>
         <h3>Thank you</h3>
