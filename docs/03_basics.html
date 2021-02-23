@@ -48,7 +48,7 @@
         <h3>Typing</h3>
         <ul>
 <li>Go is <em>statically typed</em>.</li>
-<li>Data Types
+<li>Basic Data Types
 <ul>
 <li>
 <p>Numbers</p>
@@ -76,6 +76,10 @@
 </code></pre>
 </li>
 </ul>
+</li>
+<li>Shorthand for declaring and initializing a variable
+<pre><code>myNewBool := true
+</code></pre>
 </li>
 </ul>
 
@@ -118,6 +122,105 @@
   
       <article >
       
+        <h3>Arrays, Slices and Maps</h3>
+        <ul>
+<li><em>Array</em> - numbered sequence of elements of a specific length
+<pre><code>b := [5]int{1, 2, 3, 4, 5}
+</code></pre>
+</li>
+<li><em>Slice</em> - segment of an array, but the length is allowed to change
+<pre><code>s := make([]string, 3)
+</code></pre>
+</li>
+<li><em>Map</em> - unordered collection of key-value pairs
+<pre><code>m := make(map[string]int)
+</code></pre>
+</li>
+</ul>
+
+      
+      <span class="pagenumber">4</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Arrays, Slices and Maps</h3>
+        
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func main() {</span>
+<span num="6"></span>
+<span num="7">    b := [5]int{1, 2, 3, 4, 5}</span>
+<span num="8">    fmt.Println(&#34;array:&#34;, b)</span>
+<span num="9"></span>
+<span num="10">    s := make([]string, 2)</span>
+<span num="11">    fmt.Println(&#34;empty slice:&#34;, s)</span>
+<span num="12">    s[0] = &#34;a&#34;</span>
+<span num="13">    s[1] = &#34;b&#34;</span>
+<span num="14">    s = append(s, &#34;e&#34;, &#34;f&#34;)</span>
+<span num="15">    fmt.Println(&#34;slice:&#34;, s)</span>
+<span num="16"></span>
+<span num="17">    m := make(map[string]int)</span>
+<span num="18">    m[&#34;k1&#34;] = 7</span>
+<span num="19">    m[&#34;k2&#34;] = 13</span>
+<span num="20">    fmt.Println(&#34;map:&#34;, m)</span>
+<span num="21">    fmt.Println(&#34;map entry:&#34;, m[&#34;k1&#34;])</span>
+<span num="22">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">5</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Pointers</h3>
+        <ul>
+<li><em>Pointers</em> allow you to pass references to values and records within your program</li>
+</ul>
+
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func zeroval(ival int) {</span>
+<span num="6">    ival = 0</span>
+<span num="7">}</span>
+<span num="8"></span>
+<span num="9">func zeroptr(iptr *int) {</span>
+<span num="10">    *iptr = 0</span>
+<span num="11">}</span>
+<span num="12"></span>
+<span num="13">func main() {</span>
+<span num="14">    i := 1</span>
+<span num="15">    fmt.Println(&#34;initial:&#34;, i)</span>
+<span num="16"></span>
+<span num="17">    zeroval(i)</span>
+<span num="18">    fmt.Println(&#34;zeroval:&#34;, i)</span>
+<span num="19"></span>
+<span num="20">    zeroptr(&amp;i)</span>
+<span num="21">    fmt.Println(&#34;zeroptr:&#34;, i, &#34;| pointer:&#34;, &amp;i)</span>
+<span num="22">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">6</span>
+      </article>
+  
+  
+  
+      <article >
+      
         <h3>Structs and Interfaces</h3>
         <ul>
 <li>Struct is a type that contains named fields
@@ -133,7 +236,7 @@
 </ul>
 
       
-      <span class="pagenumber">4</span>
+      <span class="pagenumber">7</span>
       </article>
   
   
@@ -168,7 +271,7 @@
 </div>
 
       
-      <span class="pagenumber">5</span>
+      <span class="pagenumber">8</span>
       </article>
   
   
@@ -180,46 +283,33 @@
   <div class="code playground" >
 <pre><span num="1">package main</span>
 <span num="2"></span>
-<span num="3">import (</span>
-<span num="4">    &#34;fmt&#34;</span>
-<span num="5">)</span>
-<span num="6"></span>
-<span num="7">type geometry interface {</span>
-<span num="8">    area() float64</span>
-<span num="9">}</span>
-<span num="10"></span>
-<span num="11">type rect struct {</span>
-<span num="12">    width, height float64</span>
-<span num="13">}</span>
-<span num="14"></span>
-<span num="15">func (r rect) area() float64 {</span>
-<span num="16">    return r.width * r.height</span>
-<span num="17">}</span>
-<span num="18"></span>
-<span num="19">func measure(g geometry) {</span>
-<span num="20">    fmt.Println(g)</span>
-<span num="21">    fmt.Println(g.area())</span>
-<span num="22">}</span>
-<span num="23"></span>
-<span num="24">func main() {</span>
-<span num="25">    r := rect{width: 3, height: 4}</span>
-<span num="26"></span>
-<span num="27">    measure(r)</span>
-<span num="28">}</span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">type geometry interface {</span>
+<span num="6">    area() float64</span>
+<span num="7">}</span>
+<span num="8"></span>
+<span num="9">type rect struct {</span>
+<span num="10">    width, height float64</span>
+<span num="11">}</span>
+<span num="12"></span>
+<span num="13">func (r rect) area() float64 {</span>
+<span num="14">    return r.width * r.height</span>
+<span num="15">}</span>
+<span num="16"></span>
+<span num="17">func measure(g geometry) {</span>
+<span num="18">    fmt.Printf(&#34;Geo: %.2f | Area: %.2f&#34;, g, g.area())</span>
+<span num="19">}</span>
+<span num="20"></span>
+<span num="21">func main() {</span>
+<span num="22">    r := rect{width: 3, height: 4}</span>
+<span num="23">    measure(r)</span>
+<span num="24">}</span>
 </pre>
 </div>
 
       
-      <span class="pagenumber">6</span>
-      </article>
-  
-  
-  
-      <article >
-      
-        <h2>Packages</h2>
-      
-      <span class="pagenumber">7</span>
+      <span class="pagenumber">9</span>
       </article>
   
   
@@ -234,7 +324,7 @@
 </ul>
 
       
-      <span class="pagenumber">8</span>
+      <span class="pagenumber">10</span>
       </article>
   
   
@@ -251,7 +341,7 @@
 </ol>
 
       
-      <span class="pagenumber">9</span>
+      <span class="pagenumber">11</span>
       </article>
   
   
@@ -270,7 +360,7 @@
 <p><em>Go is statically compiled down to its target’s native machine and mostly outperforms its virtualized (e.g. Java, Kotlin) and interpreted (e.g. JavaScript) counterparts.</em></p>
 
       
-      <span class="pagenumber">10</span>
+      <span class="pagenumber">12</span>
       </article>
   
   
@@ -283,7 +373,7 @@
 <li>Formatted code is
 <ul>
 <li>easier to <strong>write</strong></li>
-<li>easier to <strong>ready</strong></li>
+<li>easier to <strong>read</strong></li>
 <li>easier to <strong>maintain</strong></li>
 <li><strong>uncontroversial</strong></li>
 </ul>
@@ -291,7 +381,7 @@
 </ul>
 
       
-      <span class="pagenumber">11</span>
+      <span class="pagenumber">13</span>
       </article>
   
   
@@ -310,7 +400,7 @@ P - processor, a resource that is required to execute Go code.
 <p>A <code>goroutine</code> is assigned to a Thread which is assigned to a physical CPU.</p>
 
       
-      <span class="pagenumber">12</span>
+      <span class="pagenumber">14</span>
       </article>
   
   
@@ -346,7 +436,7 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">13</span>
+      <span class="pagenumber">15</span>
       </article>
   
   
@@ -357,7 +447,7 @@ P - processor, a resource that is required to execute Go code.
         <p><code>Channels</code> provide a way for two <code>goroutines</code> to communicate with each other and synchronize their execution.</p>
 
       
-      <span class="pagenumber">14</span>
+      <span class="pagenumber">16</span>
       </article>
   
   
@@ -371,20 +461,29 @@ P - processor, a resource that is required to execute Go code.
 <span num="2"></span>
 <span num="3">import &#34;fmt&#34;</span>
 <span num="4"></span>
-<span num="5">func main() {</span>
-<span num="6"></span>
-<span num="7">    messages := make(chan string)</span>
-<span num="8"></span>
-<span num="9">    go func() { messages &lt;- &#34;ping&#34; }()</span>
+<span num="5">func f(from chan string) {</span>
+<span num="6">    for i := 0; i &lt; 3; i&#43;&#43; {</span>
+<span num="7">        from &lt;- fmt.Sprint(i)</span>
+<span num="8">    }</span>
+<span num="9">}</span>
 <span num="10"></span>
-<span num="11">    msg := &lt;-messages</span>
-<span num="12">    fmt.Println(msg)</span>
-<span num="13">}</span>
+<span num="11">func main() {</span>
+<span num="12"></span>
+<span num="13">    messages := make(chan string)</span>
+<span num="14">    go f(messages)</span>
+<span num="15"></span>
+<span num="16">    msg := &lt;-messages</span>
+<span num="17">    fmt.Println(&#34;First:&#34;, msg)</span>
+<span num="18">    msg = &lt;-messages</span>
+<span num="19">    fmt.Println(&#34;Second:&#34;, msg)</span>
+<span num="20">    msg = &lt;-messages</span>
+<span num="21">    fmt.Println(&#34;Third:&#34;, msg)</span>
+<span num="22">}</span>
 </pre>
 </div>
 
       
-      <span class="pagenumber">15</span>
+      <span class="pagenumber">17</span>
       </article>
   
   
@@ -415,7 +514,7 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">16</span>
+      <span class="pagenumber">18</span>
       </article>
   
   
@@ -424,7 +523,7 @@ P - processor, a resource that is required to execute Go code.
       
         <h2>Error interface</h2>
       
-      <span class="pagenumber">17</span>
+      <span class="pagenumber">19</span>
       </article>
   
   
@@ -438,7 +537,7 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">18</span>
+      <span class="pagenumber">20</span>
       </article>
   
   

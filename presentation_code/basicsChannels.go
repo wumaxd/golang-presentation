@@ -2,12 +2,21 @@ package main
 
 import "fmt"
 
+func f(from chan string) {
+	for i := 0; i < 3; i++ {
+		from <- fmt.Sprint(i)
+	}
+}
+
 func main() {
 
 	messages := make(chan string)
-
-	go func() { messages <- "ping" }()
+	go f(messages)
 
 	msg := <-messages
-	fmt.Println(msg)
+	fmt.Println("First:", msg)
+	msg = <-messages
+	fmt.Println("Second:", msg)
+	msg = <-messages
+	fmt.Println("Third:", msg)
 }

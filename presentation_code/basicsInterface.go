@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type geometry interface {
 	area() float64
@@ -17,12 +15,10 @@ func (r rect) area() float64 {
 }
 
 func measure(g geometry) {
-	fmt.Println(g)
-	fmt.Println(g.area())
+	fmt.Printf("Geo: %.2f | Area: %.2f", g, g.area())
 }
 
 func main() {
 	r := rect{width: 3, height: 4}
-
 	measure(r)
 }

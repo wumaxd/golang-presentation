@@ -3,7 +3,7 @@
 ## Typing
 
 - Go is _statically typed_.
-- Data Types
+- Basic Data Types
     - Numbers
         - Integers (signed: `int8`, unsigned: `uint8`)
 
@@ -24,10 +24,39 @@
         ```
         var myBool bool = true
         ```
+- Shorthand for declaring and initializing a variable
+  ```
+  myNewBool := true
+  ```
 
 ## Typing Examples
 
 .play presentation_code/basicsTypes.go
+
+## Arrays, Slices and Maps
+
+- _Array_ - numbered sequence of elements of a specific length
+  ```
+  b := [5]int{1, 2, 3, 4, 5}
+  ```
+- _Slice_ - segment of an array, but the length is allowed to change
+  ```
+  s := make([]string, 3)
+  ```
+- _Map_ - unordered collection of key-value pairs
+  ```
+  m := make(map[string]int)
+  ```
+
+## Arrays, Slices and Maps
+
+.play presentation_code/basicsASM.go
+
+## Pointers
+
+- _Pointers_ allow you to pass references to values and records within your program
+
+.play presentation_code/basicsPointer.go
 
 ## Structs and Interfaces
 
@@ -43,8 +72,6 @@
 ## Interface Example
 
 .play presentation_code/basicsInterface.go
-
-## Packages
 
 ## Garbage Collection
 
@@ -80,7 +107,7 @@ Go programs are compiled ahead of time to native machine code
 - `gofmt` is an auto-formatter
 - Formatted code is
   - easier to **write**
-  - easier to **ready**
+  - easier to **read**
   - easier to **maintain**
   - **uncontroversial**
 
