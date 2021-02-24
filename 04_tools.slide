@@ -76,7 +76,7 @@ func ListenAndServe(addr string, handler Handler) error
 ## Package-Management - Go has a unique approach to package management
 
 - Package management is entirely source based, not artifact based
--- Instead of referencing a package in a repository, go references source code
+  - Instead of referencing a package in a repository, go references source code
 - Entirely git based
 - Import statement: `import 'gitlab.com/my/project'`
 
