@@ -36,7 +36,7 @@ Benjamin.Waldher@bamf.bund.de
 
 The example code can be found here:
 
-.link https://github.com/wumaxd/golang-presentation/tree/exercises/helloWorldAPI
+.link https://github.com/wumaxd/golang-presentation/tree/main/exercises/helloWorldAPI
 
 - Go compiles to native executables of the target architecture
 - Allows us to use Alpine Linux (or UBI)
