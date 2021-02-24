@@ -9,7 +9,7 @@ Benjamin.Waldher@bamf.bund.de
 
 ## Basic facts about Go
 
-- is a statically typed, compiled programming language
+- is a statically typed, garbage collected, compiled programming language
 - developed by Google (Rob Pike, Ken Thompson, Robert Griesemer)
 - 1.0 released in March 2012
   - guarantees compatibility 
