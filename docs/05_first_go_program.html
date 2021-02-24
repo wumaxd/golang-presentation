@@ -74,7 +74,7 @@
       
         <h3>Exercise User</h3>
         <ul>
-<li>Create a <code>struct</code> with the fields
+<li>Create a public <code>struct</code> <em>User</em> with the fields
 <ul>
 <li>id (<code>uint32</code>)</li>
 <li>name (<code>string</code>)</li>
@@ -100,12 +100,79 @@
   
       <article >
       
-        <h3>Result User</h3>
-        
-<iframe src="https://play.golang.org/p/j0EuuwQuigJ" height="550" width="900"></iframe>
-
+        <h2>Solution User</h2>
       
       <span class="pagenumber">5</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Result User - Solution 1</h3>
+        
+  <div class="code playground" contenteditable="true" spellcheck="false">
+<pre contenteditable="true" spellcheck="false"><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">type User struct {</span>
+<span num="6">    id      uint32</span>
+<span num="7">    name    string</span>
+<span num="8">    surname string</span>
+<span num="9">    gopher  bool</span>
+<span num="10">}</span>
+<span num="11"></span>
+<span num="12">func main() {</span>
+<span num="13">    var user1 User</span>
+<span num="14"></span>
+<span num="15">    user1.id = 1</span>
+<span num="16">    user1.name = &#34;Linus&#34;</span>
+<span num="17">    user1.surname = &#34;Torvalds&#34;</span>
+<span num="18">    user1.gopher = true</span>
+<span num="19"></span>
+<span num="20">    fmt.Println(user1)</span>
+<span num="21">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">6</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Result User - Solution 2</h3>
+        
+  <div class="code playground" contenteditable="true" spellcheck="false">
+<pre contenteditable="true" spellcheck="false"><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">type User struct {</span>
+<span num="6">    id      uint32</span>
+<span num="7">    name    string</span>
+<span num="8">    surname string</span>
+<span num="9">    gopher  bool</span>
+<span num="10">}</span>
+<span num="11"></span>
+<span num="12">func main() {</span>
+<span num="13">    user := User{</span>
+<span num="14">        id:      1,</span>
+<span num="15">        name:    &#34;Linus&#34;,</span>
+<span num="16">        surname: &#34;Torvalds&#34;,</span>
+<span num="17">        gopher:  true,</span>
+<span num="18">    }</span>
+<span num="19"></span>
+<span num="20">    fmt.Printf(&#34;%v&#34;, user)</span>
+<span num="21">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">7</span>
       </article>
   
   

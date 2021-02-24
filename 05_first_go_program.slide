@@ -24,12 +24,14 @@ Classical questions like, ggT or *Sieve of Eratosthenes*
   - `gopher` ← obviously, `true`
 - Print the result to STDOUT
 
+## Solution User
+
 ## Result User - Solution 1
 
 //.iframe https://play.golang.org/p/j0EuuwQuigJ 550 900
-.play presentation_code/firstGoProgramSolution1.go
+.play -edit presentation_code/firstGoProgramSolution1.go
 
 ## Result User - Solution 2
 
 //.iframe https://play.golang.org/p/uedHAieCYvT 550 900
-.play presentation_code/firstGoProgramSolution2.go
+.play -edit presentation_code/firstGoProgramSolution2.go

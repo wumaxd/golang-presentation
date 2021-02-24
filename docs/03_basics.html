@@ -154,25 +154,25 @@
 <span num="3">import &#34;fmt&#34;</span>
 <span num="4"></span>
 <span num="5">func main() {</span>
-<span num="6"></span>
-<span num="7">    b := [5]int{1, 2, 3, 4, 5}</span>
-<span num="8">    fmt.Println(&#34;array:&#34;, b)</span>
-<span num="9"></span>
-<span num="10">    s := make([]string, 2)</span>
-<span num="11">    fmt.Println(&#34;empty slice:&#34;, s)</span>
-<span num="12">    s[0] = &#34;a&#34;</span>
-<span num="13">    s[1] = &#34;b&#34;</span>
-<span num="14">    s = append(s, &#34;e&#34;, &#34;f&#34;)</span>
-<span num="15">    fmt.Println(&#34;slice:&#34;, s)</span>
-<span num="16"></span>
-<span num="17">    m := make(map[string]int)</span>
-<span num="18">    m[&#34;k1&#34;] = 7</span>
-<span num="19">    m[&#34;k2&#34;] = 13</span>
-<span num="20">    fmt.Println(&#34;map:&#34;, m)</span>
-<span num="21">    fmt.Println(&#34;map entry:&#34;, m[&#34;k1&#34;])</span>
-<span num="22">}</span>
+<span num="6">    b := [5]int{1, 2, 3, 4, 5}</span>
+<span num="7">    fmt.Println(&#34;array:&#34;, b)</span>
+<span num="8"></span>
+<span num="9">    s := make([]string, 2)</span>
+<span num="10">    fmt.Println(&#34;empty slice:&#34;, s)</span>
+<span num="11">    s[0] = &#34;a&#34;</span>
+<span num="12">    s[1] = &#34;b&#34;</span>
+<span num="13">    s = append(s, &#34;e&#34;, &#34;f&#34;)</span>
+<span num="14">    fmt.Println(&#34;slice:&#34;, s)</span>
+<span num="15"></span>
+<span num="16">    m := make(map[string]int)</span>
+<span num="17">    m[&#34;k1&#34;] = 7</span>
+<span num="18">    m[&#34;k2&#34;] = 13</span>
+<span num="19">    fmt.Println(&#34;map:&#34;, m)</span>
+<span num="20">    fmt.Println(&#34;map entry:&#34;, m[&#34;k1&#34;])</span>
+<span num="21">}</span>
 </pre>
 </div>
+<p>Take a look at <strong><a href="https://github.com/golang/go/wiki/SliceTricks" target="_blank" rel="noopener">Slice Tricks</a></strong></p>
 
       
       <span class="pagenumber">5</span>
@@ -316,6 +316,34 @@
   
       <article >
       
+        <h3>Visibility</h3>
+        <p>There is no <strong><code>public</code></strong>, <strong><code>protected</code></strong> or <strong><code>private</code></strong> keyword.</p>
+<p>Go does this by <strong>Naming</strong>-Conventions!</p>
+<p>This applies to: <em>Functions / Methods</em>, <em>Structs</em>, <em>Interfaces</em></p>
+<p>Rules:</p>
+<ul>
+<li>upper case first letter of the name: <strong>Public</strong>
+<ul>
+<li><code>func MyPublicFunction() {}</code></li>
+<li><code>struct PublicStruct {}</code></li>
+</ul>
+</li>
+<li>lower case first letter of the name: <strong>Private</strong>
+<ul>
+<li><code>func myPrivateFunction() {}</code></li>
+<li><code>struct privateStruct {}</code></li>
+</ul>
+</li>
+</ul>
+
+      
+      <span class="pagenumber">10</span>
+      </article>
+  
+  
+  
+      <article >
+      
         <h3>Garbage Collection</h3>
         <ul>
 <li>The runtime library implements garbage collection, concurrency, stack management, and other critical features of the Go language.</li>
@@ -324,7 +352,7 @@
 </ul>
 
       
-      <span class="pagenumber">10</span>
+      <span class="pagenumber">11</span>
       </article>
   
   
@@ -341,7 +369,7 @@
 </ol>
 
       
-      <span class="pagenumber">11</span>
+      <span class="pagenumber">12</span>
       </article>
   
   
@@ -360,7 +388,7 @@
 <p><em>Go is statically compiled down to its target’s native machine and mostly outperforms its virtualized (e.g. Java, Kotlin) and interpreted (e.g. JavaScript) counterparts.</em></p>
 
       
-      <span class="pagenumber">12</span>
+      <span class="pagenumber">13</span>
       </article>
   
   
@@ -381,7 +409,7 @@
 </ul>
 
       
-      <span class="pagenumber">13</span>
+      <span class="pagenumber">14</span>
       </article>
   
   
@@ -400,7 +428,7 @@ P - processor, a resource that is required to execute Go code.
 <p>A <code>goroutine</code> is assigned to a Thread which is assigned to a physical CPU.</p>
 
       
-      <span class="pagenumber">14</span>
+      <span class="pagenumber">15</span>
       </article>
   
   
@@ -436,7 +464,7 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">15</span>
+      <span class="pagenumber">16</span>
       </article>
   
   
@@ -447,7 +475,7 @@ P - processor, a resource that is required to execute Go code.
         <p><code>Channels</code> provide a way for two <code>goroutines</code> to communicate with each other and synchronize their execution.</p>
 
       
-      <span class="pagenumber">16</span>
+      <span class="pagenumber">17</span>
       </article>
   
   
@@ -483,7 +511,7 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">17</span>
+      <span class="pagenumber">18</span>
       </article>
   
   
@@ -514,16 +542,66 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">18</span>
+      <span class="pagenumber">19</span>
       </article>
   
   
   
       <article >
       
-        <h2>Error interface</h2>
+        <h3>Error handling</h3>
+        <p>A simple built-in interface to implement for custom <em>Error</em>-Types:</p>
+
+  <div class="code" >
+<pre><span num="1">type error interface {</span>
+<span num="2">    Error() string</span>
+<span num="3">}</span>
+</pre>
+</div>
+<p>Error Handling:</p>
+<ul>
+<li>Makes use of <em>multiple assignment</em> and <em>multiple return values</em></li>
+<li><strong>Convention</strong>: The error argument is always the last</li>
+</ul>
+
       
-      <span class="pagenumber">19</span>
+      <span class="pagenumber">20</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Error handling</h3>
+        
+  <div class="code playground" >
+<pre class="numbers"><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func myDiv(a, b int) (*int, error) {</span>
+<span num="6">    if b == 0 {</span>
+<span num="7">        <b>var err error = fmt.Errorf(&#34;You cannot divide by zero!&#34;)</b></span>
+<span num="8">        <b>return nil, err</b></span>
+<span num="9">    } else {</span>
+<span num="10">        var result int = a / b</span>
+<span num="11">        return &amp;result, nil</span>
+<span num="12">    }</span>
+<span num="13">}</span>
+<span num="14"></span>
+<span num="15">func main() {</span>
+<span num="16">    <b>result, err := myDiv(5, 0)</b></span>
+<span num="17">    <b>if err != nil {</b></span>
+<span num="18">        fmt.Println(err)</span>
+<span num="19">    } else {</span>
+<span num="20">        fmt.Printf(&#34;The result is %d&#34;, result)</span>
+<span num="21">    }</span>
+<span num="22">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">21</span>
       </article>
   
   
@@ -537,7 +615,7 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">20</span>
+      <span class="pagenumber">22</span>
       </article>
   
   
