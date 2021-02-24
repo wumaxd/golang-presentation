@@ -31,3 +31,19 @@ Benjamin.Waldher@bamf.bund.de
 - Teams looking for go developers
 - Where to find this presentation?
 - Homework
+
+## Hello World API as container
+
+The example code can be found here:
+
+.link https://github.com/wumaxd/golang-presentation/tree/exercises/helloWorldAPI
+
+- Go compiles to native executables of the target architecture
+- Allows us to use Alpine Linux (or UBI)
+- Results in really small images with fast start-up time
+
+```
+REPOSITORY        TAG             IMAGE ID       CREATED          SIZE
+api               ubi8            0c67dd9cc33e   23 seconds ago   108MB
+api               alpine          4e83eccdbbb3   10 minutes ago   10.5MB
+```
