@@ -1,5 +1,13 @@
 # Go Tools
 
+Maximilian Schönenberg
+Master@IBM - Security, IBM Österreich
+Maximilian.Schoenenberg@ibm.com
+
+Benjamin Waldher
+Benjamin.Waldher@bamf.bund.de
+Externer Mitarbeiter im CIC beim Cloud Native Team
+
 ## The 'go' utility (1/3)
 
 Compiler, package-manager, formatter, linter, ... all in a **single tool**:
