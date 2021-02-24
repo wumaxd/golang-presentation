@@ -25,11 +25,9 @@ cp index_template.md ./docs/index.md
 
 echo "" >> ./docs/index.md
 echo "" >> ./docs/index.md
-echo "| Link |" >> ./docs/index.md
-echo "| ---- |" >> ./docs/index.md
 
 for entry in "${page_array[@]}"; do
-  echo "| [$entry](./""$entry"".html) |" >> ./docs/index.md
+  echo "- [$entry](./""$entry"".html)" >> ./docs/index.md
 done
 
 kill $background_present

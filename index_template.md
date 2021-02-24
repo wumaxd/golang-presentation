@@ -1,5 +1,6 @@
 # Golang Introduction
 
+![Gopher](https://golang.org/doc/gopher/appenginegophercolor.jpg)
 ## Links
 
 | Name | Link | Description |
@@ -9,4 +10,4 @@
 | A Tour of Go | <https://tour.golang.org/> | A tour through the basics of Go. |
 | Play with Go | <https://play-with-go.dev> | An in-browser solution to try out fundamentals of Go including the Go CLI. |
 
-## Pages
+## Presentations
