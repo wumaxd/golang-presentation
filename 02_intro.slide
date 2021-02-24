@@ -6,6 +6,7 @@ Maximilian.Schoenenberg@ibm.com
 
 Benjamin Waldher
 Benjamin.Waldher@bamf.bund.de
+Externer Mitarbeiter im CIC beim Cloud Native Team
 
 ## Basic facts about Go
 
@@ -93,9 +94,9 @@ Next big thing:
 ## Cross-Compilation
 
 - Go compiler needs a single flag to build for other platforms
--- `GOOS=darwin go build file.go` builds binaries for Mac, without requiring a Mac
+  - `GOOS=darwin go build file.go` builds binaries for Mac, without requiring a Mac
 - Other architectures are also possible
--- `GOOS=linux GOARCH=arm go build file.go` builds an ARM binary
+  - `GOOS=linux GOARCH=arm go build file.go` builds an ARM binary
 - A single CI process can build a binary for all platforms and architectures
 - Resulting binary is very portable
--- On Linux, binary will only depend on glibc
+  - On Linux, binary will only depend on glibc
