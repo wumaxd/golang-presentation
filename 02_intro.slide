@@ -20,6 +20,14 @@ Famous software in Go:
 - InfluxDB, TiDB, CockroachDB
 - Mattermost, Terraform, Hugo
 
+## Hello World
+
+.play presentation_code/helloWorld.go
+
+## Hello Microservice-World
+
+.code presentation_code/helloHttp.go
+
 ## Why should Go interest me?
 
 ## Why was Go developed? (1/2)
@@ -50,8 +58,8 @@ What they needed:
 - 1.0 released in March 2011
 
 Important Steps in development (over the last 10 years):
+- Code Coverage support in `go test`
 - Module support: integrated support for versioning and package distribution
-- WebAssembly support
 
 Next big thing:
 - Generics in Go (RFC approved few days ago)
@@ -67,16 +75,6 @@ Next big thing:
   - huge ecosystem of libraries
 
 ## Use cases
-
-- TODO: check with Ben
-- Backend vs Frontend
-  - Microservices
-
-.code presentation_code/http-server.go
-
-- Scripting
-- WebAssembly
-- CLI
 
 ## Frontend vs. Backend
 

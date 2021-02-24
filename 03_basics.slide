@@ -52,6 +52,8 @@
 
 .play presentation_code/basicsASM.go
 
+Take a look at **[Slice Tricks](https://github.com/golang/go/wiki/SliceTricks)**
+
 ## Pointers
 
 - _Pointers_ allow you to pass references to values and records within your program
@@ -72,6 +74,22 @@
 ## Interface Example
 
 .play presentation_code/basicsInterface.go
+
+## Visibility
+
+There is no **`public`**, **`protected`** or **`private`** keyword.
+
+Go does this by **Naming**-Conventions! 
+
+This applies to: *Functions / Methods*, *Structs*, *Interfaces*
+
+Rules:
+- upper case first letter of the name: **Public**
+  - `func MyPublicFunction() {}`
+  - `struct PublicStruct {}`
+- lower case first letter of the name: **Private**
+  - `func myPrivateFunction() {}`
+  - `struct privateStruct {}`
 
 ## Garbage Collection
 
@@ -144,7 +162,19 @@ A `goroutine` is assigned to a Thread which is assigned to a physical CPU.
 
 .play presentation_code/basicsBuffer.go
 
-## Error interface
+## Error handling
+
+A simple built-in interface to implement for custom *Error*-Types:
+
+.code presentation_code/error.go
+
+Error Handling: 
+- Makes use of *multiple assignment* and *multiple return values*
+- **Convention**: The error argument is always the last
+
+## Error handling
+
+.play -numbers presentation_code/basicsErrorHandling.go
 
 ## Go by Example
 
