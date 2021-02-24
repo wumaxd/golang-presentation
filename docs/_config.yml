@@ -19,3 +19,5 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-menus
+
+theme: jekyll-theme-cayman
