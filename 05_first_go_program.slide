@@ -34,13 +34,13 @@ maximilian.wurzer@ibm.com
 
 ## Result User - Solution 1
 
-//.iframe https://play.golang.org/p/j0EuuwQuigJ 550 900
-.play -edit presentation_code/firstGoProgramSolution1.go
+.iframe https://play.golang.org/p/j0EuuwQuigJ 550 900
+//.play -edit presentation_code/firstGoProgramSolution1.go
 
 ## Result User - Solution 2
 
-//.iframe https://play.golang.org/p/uedHAieCYvT 550 900
-.play -edit presentation_code/firstGoProgramSolution2.go
+.iframe https://play.golang.org/p/uedHAieCYvT 550 900
+//.play -edit presentation_code/firstGoProgramSolution2.go
 
 ## Exercise Sort
 
