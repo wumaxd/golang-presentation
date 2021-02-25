@@ -8,16 +8,14 @@ Maximilian Wurzer
 Senior Application Consultant, IBM Deutschland
 maximilian.wurzer@ibm.com
 
-## Intro to the task
+## Toolbox
 
-- task
-- what you need?
-- maybe: how to start developing
-- Support mail address
+- Go to
 
-## Task
+.link https://play.golang.org/
 
-Classical questions like, ggT or *Sieve of Eratosthenes*
+- Hack away
+- Questions? - Write an email to <email>
 
 ## Exercise User
 
@@ -43,3 +41,57 @@ Classical questions like, ggT or *Sieve of Eratosthenes*
 
 //.iframe https://play.golang.org/p/uedHAieCYvT 550 900
 .play -edit presentation_code/firstGoProgramSolution2.go
+
+## Exercise Sort
+
+- Go comes with a sort interface which can be adapted
+- `Len`, `Less`, and `Swap`
+
+  ```
+  type Interface interface {
+      // Len is the number of elements in the collection.
+      Len() int
+
+      // Less reports whether the element with index i
+      // must sort before the element with index j.
+      Less(i, j int) bool
+
+      // Swap swaps the elements with indexes i and j.
+      Swap(i, j int)
+  }
+  ```
+
+- Create a type which implements the `sort.Interface` based on a User slice
+- Sort the users by ID
+
+## Solution Sort
+
+## Result Sort
+
+.iframe https://play.golang.org/p/6cedRdP83V- 750 900
+//.play -edit firstGoProgramSortSolution.go
+
+## Exercise JSON
+
+- Create a public `struct` *User* with the fields (capital letters are important)
+  - ID (`uint32`)
+  - Name (`string`)
+  - Surname (`string`)
+  - gopher (`bool`)
+- Create a user and encode the user to a JSON with
+  ```
+  b, err := json.Marshal(m)
+  ```
+- Print the JSON (you will only see the fields `ID`, `Name` and `Surname`)
+- Decode the JSON with
+  ```
+  var m User
+  err := json.Unmarshal(b, &m)
+  ```
+  and print the Name
+
+## Solution JSON
+
+## Result JSON
+
+.iframe https://play.golang.org/p/96YSbccknz8 750 900

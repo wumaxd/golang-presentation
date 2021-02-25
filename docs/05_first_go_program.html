@@ -77,27 +77,17 @@
   
       <article >
       
-        <h3>Intro to the task</h3>
+        <h3>Toolbox</h3>
         <ul>
-<li>task</li>
-<li>what you need?</li>
-<li>maybe: how to start developing</li>
-<li>Support mail address</li>
+<li>Go to</li>
+</ul>
+<p class="link"><a href="https://play.golang.org/" target="_blank">play.golang.org/</a></p><ul>
+<li>Hack away</li>
+<li>Questions? - Write an email to <email></li>
 </ul>
 
       
       <span class="pagenumber">2</span>
-      </article>
-  
-  
-  
-      <article >
-      
-        <h3>Task</h3>
-        <p>Classical questions like, ggT or <em>Sieve of Eratosthenes</em></p>
-
-      
-      <span class="pagenumber">3</span>
       </article>
   
   
@@ -125,7 +115,7 @@
 </ul>
 
       
-      <span class="pagenumber">4</span>
+      <span class="pagenumber">3</span>
       </article>
   
   
@@ -134,7 +124,7 @@
       
         <h2>Solution User</h2>
       
-      <span class="pagenumber">5</span>
+      <span class="pagenumber">4</span>
       </article>
   
   
@@ -169,7 +159,7 @@
 </div>
 
       
-      <span class="pagenumber">6</span>
+      <span class="pagenumber">5</span>
       </article>
   
   
@@ -204,7 +194,116 @@
 </div>
 
       
+      <span class="pagenumber">6</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Exercise Sort</h3>
+        <ul>
+<li>
+<p>Go comes with a sort interface which can be adapted</p>
+</li>
+<li>
+<p><code>Len</code>, <code>Less</code>, and <code>Swap</code></p>
+<pre><code>type Interface interface {
+    // Len is the number of elements in the collection.
+    Len() int
+
+    // Less reports whether the element with index i
+    // must sort before the element with index j.
+    Less(i, j int) bool
+
+    // Swap swaps the elements with indexes i and j.
+    Swap(i, j int)
+}
+</code></pre>
+</li>
+<li>
+<p>Create a type which implements the <code>sort.Interface</code> based on a User slice</p>
+</li>
+<li>
+<p>Sort the users by ID</p>
+</li>
+</ul>
+
+      
       <span class="pagenumber">7</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Solution Sort</h2>
+      
+      <span class="pagenumber">8</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Result Sort</h3>
+        
+<iframe src="https://play.golang.org/p/6cedRdP83V-" height="750" width="900"></iframe>
+
+      
+      <span class="pagenumber">9</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Exercise JSON</h3>
+        <ul>
+<li>Create a public <code>struct</code> <em>User</em> with the fields (capital letters are important)
+<ul>
+<li>ID (<code>uint32</code>)</li>
+<li>Name (<code>string</code>)</li>
+<li>Surname (<code>string</code>)</li>
+<li>gopher (<code>bool</code>)</li>
+</ul>
+</li>
+<li>Create a user and encode the user to a JSON with
+<pre><code>b, err := json.Marshal(m)
+</code></pre>
+</li>
+<li>Print the JSON (you will only see the fields <code>ID</code>, <code>Name</code> and <code>Surname</code>)</li>
+<li>Decode the JSON with
+<pre><code>var m User
+err := json.Unmarshal(b, &amp;m)
+</code></pre>
+<p>and print the Name</p>
+</li>
+</ul>
+
+      
+      <span class="pagenumber">10</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Solution JSON</h2>
+      
+      <span class="pagenumber">11</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Result JSON</h3>
+        
+<iframe src="https://play.golang.org/p/96YSbccknz8" height="750" width="900"></iframe>
+
+      
+      <span class="pagenumber">12</span>
       </article>
   
   
