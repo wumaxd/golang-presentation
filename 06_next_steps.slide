@@ -14,6 +14,24 @@ Benjamin.Waldher@bamf.bund.de
 
 ## Pros/Cons of Go
 
+Pros:
+- quick compile times
+- easy & quick to develop, focus on readability
+- great standard library and huge ecosystem of open source libraries
+
+Cons:
+- sometimes too simple & reduced: Slice operations
+- missing generics lead to multiple implementations of the same algorithm
+
+## Recommended open source libraries
+
+- [github.com/gorilla/mux](https://github.com/gorilla/mux): HTTP-request multiplexer, compatible with standard HTTP-Server
+  - [Gorilla Toolkit](https://www.gorillatoolkit.org/): many useful tools around HTTP-Server
+- [github.com/google/uuid](https://github.com/google/uuid): UUID data structure
+- [github.com/spf13/cobra](https://github.com/spf13/cobra): CLI library (Docker & K8s is using it)
+- [github.com/sirupsen/logrus](https://github.com/sirupsen/logrus): Often used logging library
+- [gocloud.dev](https://gocloud.dev): *cloud development kit* for cross-*cloud platform* interaction (→ multi- & hybrid-cloud)
+
 ## Typical use cases
 
 - Microservices

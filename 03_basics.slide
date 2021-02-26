@@ -94,10 +94,10 @@ This applies to: *Functions / Methods*, *Structs*, *Interfaces*
 Rules:
 - upper case first letter of the name: **Public**
   - `func MyPublicFunction() {}`
-  - `struct PublicStruct {}`
+  - `type PublicStruct ...`
 - lower case first letter of the name: **Private**
   - `func myPrivateFunction() {}`
-  - `struct privateStruct {}`
+  - `type privateStruct ...`
 
 ## Garbage Collection
 
