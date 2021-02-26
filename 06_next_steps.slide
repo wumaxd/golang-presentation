@@ -40,15 +40,7 @@ Cons:
   - example: Docker, Kubernetes CLI
 - Container eco-system (Docker, Kubernetes)
 
-## Next steps
-
-- training courses
-- tools you need?
-  - IDE
-  - go runtime installed
-- Teams looking for go developers
-- Where to find this presentation?
-- Homework
+## IDEs and Go
 
 ## Hello World API as container
 
@@ -65,3 +57,12 @@ REPOSITORY        TAG             IMAGE ID       CREATED          SIZE
 api               ubi8            0c67dd9cc33e   23 seconds ago   108MB
 api               alpine          4e83eccdbbb3   10 minutes ago   10.5MB
 ```
+
+## Next steps
+
+- Hack away
+- Where to find this presentation? 
+
+[https://wumaxd.github.io/golang-presentation/](https://wumaxd.github.io/golang-presentation/)
+
+.image images/github_page.png _ 300
