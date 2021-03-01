@@ -1,10 +1,9 @@
 {
   "pages": [
-    "01_welcome.slide",
-    "02_intro.slide",
-    "03_basics.slide",
-    "04_tools.slide",
-    "05_first_go_program.slide",
-    "06_next_steps.slide"
+    "01_intro.slide",
+    "02_basics.slide",
+    "03_tools.slide",
+    "04_first_go_program.slide",
+    "05_next_steps.slide"
   ]
 }

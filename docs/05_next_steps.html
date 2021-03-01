@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Go Thementag</title>
+    <title>Further steps with go in your organization</title>
     <meta charset='utf-8'>
     <script>
       var notesEnabled =  false ;
@@ -35,7 +35,7 @@
     <section class='slides layout-widescreen'>
 
       <article>
-        <h1>Go Thementag</h1>
+        <h1>Further steps with go in your organization</h1>
         
         
         
@@ -93,18 +93,18 @@
   
       <article >
       
-        <h3>Agenda</h3>
-        <ul>
-<li>11:00 - 11:05 | <strong>Begrüßung</strong></li>
-<li>11:05 - 11:50 | <strong>Historie &amp; Anwendungsfälle von Go</strong></li>
-<li>11:50 - 13:30 | <strong>Praxis: Mein erstes Go-Programm (inkl. 15 Minuten Pause)</strong></li>
-<li>13:30 - 13:50 | <strong>Erste Schritte, um Go in die eigene Organisation zu bringen</strong></li>
-<li>13:50 - 14:00 | <strong>Fragen</strong></li>
+        <h3>Pros/Cons of Go</h3>
+        <p>Pros:</p>
+<ul>
+<li>quick compile times</li>
+<li>easy &amp; quick to develop, focus on readability</li>
+<li>great standard library and huge ecosystem of open source libraries</li>
 </ul>
-
-<div class="image">
-  <img src="images/home-gopher.png" width="300">
-</div>
+<p>Cons:</p>
+<ul>
+<li>sometimes too simple &amp; reduced: Slice operations</li>
+<li>missing generics lead to multiple implementations of the same algorithm</li>
+</ul>
 
       
       <span class="pagenumber">2</span>
@@ -114,21 +114,89 @@
   
       <article >
       
-        <h3>Organisatorisches</h3>
+        <h3>Recommended open source libraries</h3>
         <ul>
-<li>Präsentation mit allen Beispielen ist hier verfügbar
-<a href="https://https://wumaxd.github.io/golang-presentation/" target="_blank" rel="noopener">https://wumaxd.github.io/golang-presentation/</a></li>
-</ul>
-
-<div class="image">
-  <img src="images/github_page.png" width="300">
-</div>
+<li><a href="https://github.com/gorilla/mux" target="_blank" rel="noopener">github.com/gorilla/mux</a>: HTTP-request multiplexer, compatible with standard HTTP-Server
 <ul>
-<li>Fragen während der Präsentation: Webex Chat</li>
+<li><a href="https://www.gorillatoolkit.org/" target="_blank" rel="noopener">Gorilla Toolkit</a>: many useful tools around HTTP-Server</li>
+</ul>
+</li>
+<li><a href="https://github.com/google/uuid" target="_blank" rel="noopener">github.com/google/uuid</a>: UUID data structure</li>
+<li><a href="https://github.com/spf13/cobra" target="_blank" rel="noopener">github.com/spf13/cobra</a>: CLI library (Docker &amp; K8s is using it)</li>
+<li><a href="https://github.com/sirupsen/logrus" target="_blank" rel="noopener">github.com/sirupsen/logrus</a>: Often used logging library</li>
+<li><a href="https://gocloud.dev" target="_blank" rel="noopener">gocloud.dev</a>: <em>cloud development kit</em> for cross-<em>cloud platform</em> interaction (→ multi- &amp; hybrid-cloud)</li>
 </ul>
 
       
       <span class="pagenumber">3</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Typical use cases</h3>
+        <ul>
+<li>Microservices</li>
+<li>CLI-Applications
+<ul>
+<li>cross-compiling</li>
+<li>example: Docker, Kubernetes CLI</li>
+</ul>
+</li>
+<li>Container eco-system (Docker, Kubernetes)</li>
+</ul>
+
+      
+      <span class="pagenumber">4</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>IDEs and Go</h2>
+      
+      <span class="pagenumber">5</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Hello World API as container</h3>
+        <p>The example code can be found here:</p>
+<p class="link"><a href="https://github.com/wumaxd/golang-presentation/tree/main/exercises/helloWorldAPI" target="_blank">github.com/wumaxd/golang-presentation/tree/main/exercises/helloWorldAPI</a></p><ul>
+<li>Go compiles to native executables of the target architecture</li>
+<li>Allows us to use Alpine Linux (or UBI)</li>
+<li>Results in really small images with fast start-up time</li>
+</ul>
+<pre><code>REPOSITORY        TAG             IMAGE ID       CREATED          SIZE
+api               ubi8            0c67dd9cc33e   23 seconds ago   108MB
+api               alpine          4e83eccdbbb3   10 minutes ago   10.5MB
+</code></pre>
+
+      
+      <span class="pagenumber">6</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Next steps</h3>
+        <ul>
+<li>Hack away</li>
+<li>Where to find this presentation?</li>
+</ul>
+<p><a href="https://wumaxd.github.io/golang-presentation/" target="_blank" rel="noopener">https://wumaxd.github.io/golang-presentation/</a></p>
+
+<div class="image">
+  <img src="images/github_page.png" width="300">
+</div>
+
+      
+      <span class="pagenumber">7</span>
       </article>
   
   
@@ -149,7 +217,7 @@
     Master-Student - Cloud &amp; Security, IBM Österreich
   </p>
   
-<p class="link"><a href="mailto:Maximilian.Schoenenberg@ibm.com" target="_blank">Maximilian.Schoenenberg@ibm.com</a></p>
+
           </div>
         
           <div class="presenter">
@@ -165,7 +233,7 @@
     Senior Application Consultant, IBM Deutschland
   </p>
   
-<p class="link"><a href="mailto:maximilian.wurzer@ibm.com" target="_blank">maximilian.wurzer@ibm.com</a></p>
+
           </div>
         
           <div class="presenter">
@@ -181,7 +249,7 @@
     Externer Mitarbeiter im CIC beim Cloud Native Team
   </p>
   
-<p class="link"><a href="mailto:Benjamin.Waldher@bamf.bund.de" target="_blank">Benjamin.Waldher@bamf.bund.de</a></p>
+
           </div>
         
       </article>
