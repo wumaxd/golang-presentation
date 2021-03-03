@@ -6,6 +6,8 @@ Master-Student - Cloud & Security, IBM Österreich
 Maximilian Wurzer
 Senior Application Consultant, IBM Deutschland
 
+## Types and data structures
+
 ## Typing
 
 - Go is _statically typed_.
@@ -97,6 +99,88 @@ Rules:
   - `func myPrivateFunction() {}`
   - `type privateStruct ...`
 
+## Control structures
+
+## if ... else if ... else
+
+- No parentheses around condition
+- local assignment possible: `if a := 5; 3 < a {}`
+
+.play presentation_code/basicsIfElse.go
+
+## switch ... case
+
+- No `break` after cases needed.
+
+.play -edit presentation_code/basicsSwitchCase.go
+
+## Loops
+
+- Only one loop in Go, but supports multiple types of loops
+
+.play -edit presentation_code/basicsFor.go
+
+
+
+## Concurrency
+
+## Concurrency - Goroutines
+Functions which are executed concurrent are called `goroutine`. These are defined as following ([proc.go](https://golang.org/src/runtime/proc.go)):
+
+```
+The main concepts are:
+G - goroutine.
+M - worker thread, or machine.
+P - processor, a resource that is required to execute Go code.
+    M must have an associated P to execute Go code, however it can be
+    blocked or in a syscall w/o an associated P.
+```
+
+A `goroutine` is assigned to a Thread which is assigned to a physical CPU.
+
+## Concurrency - Goroutines Example
+
+.play presentation_code/basicsGoroutine.go
+
+## Concurrency - Channels
+
+`Channels` provide a way for two `goroutines` to communicate with each other and synchronize their execution.
+
+## Concurrency - Channels Example
+
+.play presentation_code/basicsChannels.go
+
+## Concurrency - Channels Direction & Buffer
+
+- Channels can be directed - only send or only receive
+- Channels are by default _unbuffered_ - only accept sends `(chan <-)` if there is a corresponding receive `(<- chan)` ready
+
+.play presentation_code/basicsBuffer.go
+
+## Select
+
+Waiting for a channel to receive a message:
+
+.play presentation_code/basicsSelect.go
+
+
+
+
+## Error handling
+
+A simple built-in interface to implement for custom *Error*-Types:
+
+.code presentation_code/error.go
+
+Error Handling: 
+- Makes use of *multiple assignment* and *multiple return values*
+- **Convention**: The error argument is always the last
+
+
+## Error handling
+
+.play -numbers presentation_code/basicsErrorHandling.go
+
 ## Garbage Collection
 
 - The runtime library implements garbage collection, concurrency, stack management, and other critical features of the Go language.
@@ -134,53 +218,6 @@ Go programs are compiled ahead of time to native machine code
   - easier to **read**
   - easier to **maintain**
   - **uncontroversial**
-
-## Concurrency - Goroutines
-Functions which are executed concurrent are called `goroutine`. These are defined as following ([proc.go](https://golang.org/src/runtime/proc.go)):
-
-```
-The main concepts are:
-G - goroutine.
-M - worker thread, or machine.
-P - processor, a resource that is required to execute Go code.
-    M must have an associated P to execute Go code, however it can be
-    blocked or in a syscall w/o an associated P.
-```
-
-A `goroutine` is assigned to a Thread which is assigned to a physical CPU.
-
-## Concurrency - Goroutines Example
-
-.play presentation_code/basicsGoroutine.go
-
-## Concurrency - Channels
-
-`Channels` provide a way for two `goroutines` to communicate with each other and synchronize their execution.
-
-## Concurrency - Channels Example
-
-.play presentation_code/basicsChannels.go
-
-## Concurrency - Channels Direction & Buffer
-
-- Channels can be directed - only send or only receive
-- Channels are by default _unbuffered_ - only accept sends `(chan <-)` if there is a corresponding receive `(<- chan)` ready
-
-.play presentation_code/basicsBuffer.go
-
-## Error handling
-
-A simple built-in interface to implement for custom *Error*-Types:
-
-.code presentation_code/error.go
-
-Error Handling: 
-- Makes use of *multiple assignment* and *multiple return values*
-- **Convention**: The error argument is always the last
-
-## Error handling
-
-.play -numbers presentation_code/basicsErrorHandling.go
 
 ## Go by Example
 

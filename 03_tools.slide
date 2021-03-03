@@ -114,4 +114,5 @@ replace example.com/bad/thing v1.4.5 => example.com/good/thing v1.4.5
 - Stack Overflow
 - Reddit
 - Libraries (new, top, growing): [https://libs.garden/go](https://libs.garden/go)
+  - also: [github.com/avelino/awesome-go](https://github.com/avelino/awesome-go)
 

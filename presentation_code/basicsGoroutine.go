@@ -13,7 +13,6 @@ func f(from string) {
 }
 
 func main() {
-
 	go f("goroutine")
 
 	f("direct")
