@@ -12,8 +12,12 @@ Externer Mitarbeiter im CIC beim Cloud Native Team
 ## Pros/Cons of Go
 
 Pros:
-- quick compile times
-- easy & quick to develop, focus on readability
+- Fast builds
+- Performance
+- Comprehensibility: easy & quick to develop, focus on readability
+- Linguistic stability: The "Go 1 promise"
+- Memory safety
+- Static linking
 - great standard library and huge ecosystem of open source libraries
 
 Cons:

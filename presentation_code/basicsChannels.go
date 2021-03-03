@@ -9,7 +9,6 @@ func f(from chan string) {
 }
 
 func main() {
-
 	messages := make(chan string)
 	go f(messages)
 
