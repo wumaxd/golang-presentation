@@ -77,6 +77,15 @@
   
       <article >
       
+        <h2>Types and data structures</h2>
+      
+      <span class="pagenumber">2</span>
+      </article>
+  
+  
+  
+      <article >
+      
         <h3>Typing</h3>
         <ul>
 <li>Go is <em>statically typed</em>.</li>
@@ -116,7 +125,7 @@
 </ul>
 
       
-      <span class="pagenumber">2</span>
+      <span class="pagenumber">3</span>
       </article>
   
   
@@ -135,19 +144,19 @@
 <span num="7">    var myFloatVar float64 = 3.14</span>
 <span num="8">    var myString string = &#34;Hello World&#34;</span>
 <span num="9">    var myBool bool = true</span>
-<span num="10"></span>
-<span num="11">    fmt.Println(&#34;Integer:&#34;, myIntVar)</span>
-<span num="12">    fmt.Println(&#34;Float:&#34;, myFloatVar)</span>
-<span num="13"></span>
+<span num="10">    var myComplexVar complex128 = 5 &#43; 3i</span>
+<span num="11"></span>
+<span num="12">    fmt.Println(&#34;Integer:&#34;, myIntVar)</span>
+<span num="13">    fmt.Println(&#34;Float:&#34;, myFloatVar)</span>
 <span num="14">    fmt.Println(&#34;String:&#34;, myString)</span>
-<span num="15"></span>
-<span num="16">    fmt.Println(&#34;My bool is&#34;, myBool)</span>
+<span num="15">    fmt.Println(&#34;My bool is&#34;, myBool)</span>
+<span num="16">    fmt.Println(&#34;My complex number is&#34;, myComplexVar)</span>
 <span num="17">}</span>
 </pre>
 </div>
 
       
-      <span class="pagenumber">3</span>
+      <span class="pagenumber">4</span>
       </article>
   
   
@@ -171,7 +180,7 @@
 </ul>
 
       
-      <span class="pagenumber">4</span>
+      <span class="pagenumber">5</span>
       </article>
   
   
@@ -207,7 +216,7 @@
 <p>Take a look at <strong><a href="https://github.com/golang/go/wiki/SliceTricks" target="_blank" rel="noopener">Slice Tricks</a></strong></p>
 
       
-      <span class="pagenumber">5</span>
+      <span class="pagenumber">6</span>
       </article>
   
   
@@ -246,7 +255,7 @@
 </div>
 
       
-      <span class="pagenumber">6</span>
+      <span class="pagenumber">7</span>
       </article>
   
   
@@ -268,7 +277,7 @@
 </ul>
 
       
-      <span class="pagenumber">7</span>
+      <span class="pagenumber">8</span>
       </article>
   
   
@@ -303,7 +312,7 @@
 </div>
 
       
-      <span class="pagenumber">8</span>
+      <span class="pagenumber">9</span>
       </article>
   
   
@@ -341,7 +350,7 @@
 </div>
 
       
-      <span class="pagenumber">9</span>
+      <span class="pagenumber">10</span>
       </article>
   
   
@@ -369,21 +378,6 @@
 </ul>
 
       
-      <span class="pagenumber">10</span>
-      </article>
-  
-  
-  
-      <article >
-      
-        <h3>Garbage Collection</h3>
-        <ul>
-<li>The runtime library implements garbage collection, concurrency, stack management, and other critical features of the Go language.</li>
-<li>Via <code>GOGC</code> the garbage collector can be controlled (total heap size relative to reachable objects).</li>
-<li>There is no separate virtual machine.</li>
-</ul>
-
-      
       <span class="pagenumber">11</span>
       </article>
   
@@ -391,15 +385,7 @@
   
       <article >
       
-        <h3>Compilation - Under the hood</h3>
-        <p class="link"><a href="https://github.com/golang/go/tree/master/src/cmd/compile" target="_blank">github.com/golang/go/tree/master/src/cmd/compile</a></p><p>Go programs are compiled ahead of time to native machine code</p>
-<ol>
-<li>Parsing</li>
-<li>Type-checking and AST transformations</li>
-<li>Generic SSA (Static Single Assignment)</li>
-<li>Generating machine code</li>
-</ol>
-
+        <h2>Control structures</h2>
       
       <span class="pagenumber">12</span>
       </article>
@@ -408,16 +394,30 @@
   
       <article >
       
-        <h3>Compilation - Choose your target</h3>
-        <p><strong>One source - Many targets</strong></p>
-<ul>
-<li><code>GOOS=linux</code> - <code>GOARCH=arm</code></li>
-<li><code>GOOS=linux</code> - <code>GOARCH=amd64</code></li>
-<li><code>GOOS=linux</code> - <code>GOARCH=ppc64le</code></li>
-<li><code>GOOS=windows</code> - <code>GOARCH=amd64</code></li>
-<li><code>GOOS=darwin</code> - <code>GOARCH=amd64</code></li>
+        <h3>if ... else if ... else</h3>
+        <ul>
+<li>No parentheses around condition</li>
+<li>local assignment possible: <code>if a := 5; 3 &lt; a {}</code></li>
 </ul>
-<p><em>Go is statically compiled down to its target’s native machine and mostly outperforms its virtualized (e.g. Java, Kotlin) and interpreted (e.g. JavaScript) counterparts.</em></p>
+
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func main() {</span>
+<span num="6">    var number = 5</span>
+<span num="7"></span>
+<span num="8">    if number &lt; 0 {</span>
+<span num="9">        fmt.Println(&#34;Number is negative&#34;)</span>
+<span num="10">    } else if number &gt; 0 {</span>
+<span num="11">        fmt.Println(&#34;Number is positive&#34;)</span>
+<span num="12">    } else {</span>
+<span num="13">        fmt.Println(&#34;Number is zero&#34;)</span>
+<span num="14">    }</span>
+<span num="15">}</span>
+</pre>
+</div>
 
       
       <span class="pagenumber">13</span>
@@ -427,21 +427,82 @@
   
       <article >
       
-        <h3>Formatting</h3>
+        <h3>switch ... case</h3>
         <ul>
-<li><code>gofmt</code> is an auto-formatter</li>
-<li>Formatted code is
-<ul>
-<li>easier to <strong>write</strong></li>
-<li>easier to <strong>read</strong></li>
-<li>easier to <strong>maintain</strong></li>
-<li><strong>uncontroversial</strong></li>
+<li>No <code>break</code> after cases needed.</li>
 </ul>
-</li>
-</ul>
+
+  <div class="code playground" contenteditable="true" spellcheck="false">
+<pre contenteditable="true" spellcheck="false"><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func main() {</span>
+<span num="6">    var mood = &#34;🙂&#34;</span>
+<span num="7"></span>
+<span num="8">    switch mood {</span>
+<span num="9">    case &#34;🙂&#34;, &#34;😀&#34;:</span>
+<span num="10">        fmt.Println(&#34;I&#39;m happy&#34;)</span>
+<span num="11">    case &#34;😞&#34;:</span>
+<span num="12">        fmt.Println(&#34;I&#39;m disappointed&#34;)</span>
+<span num="13">    case &#34;😢&#34;:</span>
+<span num="14">        fmt.Println(&#34;I&#39;m sad&#34;)</span>
+<span num="15">    default:</span>
+<span num="16">        fmt.Println(&#34;No mood&#34;)</span>
+<span num="17">    }</span>
+<span num="18">}</span>
+</pre>
+</div>
 
       
       <span class="pagenumber">14</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Loops</h3>
+        <ul>
+<li>Only one loop in Go, but supports multiple types of loops</li>
+</ul>
+
+  <div class="code playground" contenteditable="true" spellcheck="false">
+<pre contenteditable="true" spellcheck="false"><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func main() {</span>
+<span num="6">    var sum = 0</span>
+<span num="7">    <b>for i := 0; i &lt;= 3; i&#43;&#43; {</b></span>
+<span num="8">        sum &#43;= i</span>
+<span num="9">    }</span>
+<span num="10"></span>
+<span num="11">    <b>for sum &lt; 100 {</b></span>
+<span num="12">        sum &#43;= 1</span>
+<span num="13">    }</span>
+<span num="14">    fmt.Println(&#34;Summe:&#34;, sum)</span>
+<span num="15"></span>
+<span num="16">    <b>// for { break }</b></span>
+<span num="17"></span>
+<span num="18">    <b>for index, value := range []string{&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;} {</b></span>
+<span num="19">        fmt.Printf(&#34;Index: %d - Value: %s\n&#34;, index, value)</span>
+<span num="20">    }</span>
+<span num="21">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">15</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Concurrency</h2>
+      
+      <span class="pagenumber">16</span>
       </article>
   
   
@@ -460,7 +521,7 @@ P - processor, a resource that is required to execute Go code.
 <p>A <code>goroutine</code> is assigned to a Thread which is assigned to a physical CPU.</p>
 
       
-      <span class="pagenumber">15</span>
+      <span class="pagenumber">17</span>
       </article>
   
   
@@ -485,18 +546,17 @@ P - processor, a resource that is required to execute Go code.
 <span num="13">}</span>
 <span num="14"></span>
 <span num="15">func main() {</span>
-<span num="16"></span>
-<span num="17">    go f(&#34;goroutine&#34;)</span>
-<span num="18"></span>
-<span num="19">    f(&#34;direct&#34;)</span>
-<span num="20"></span>
-<span num="21">    fmt.Println(&#34;done&#34;)</span>
-<span num="22">}</span>
+<span num="16">    go f(&#34;goroutine&#34;)</span>
+<span num="17"></span>
+<span num="18">    f(&#34;direct&#34;)</span>
+<span num="19"></span>
+<span num="20">    fmt.Println(&#34;done&#34;)</span>
+<span num="21">}</span>
 </pre>
 </div>
 
       
-      <span class="pagenumber">16</span>
+      <span class="pagenumber">18</span>
       </article>
   
   
@@ -507,7 +567,7 @@ P - processor, a resource that is required to execute Go code.
         <p><code>Channels</code> provide a way for two <code>goroutines</code> to communicate with each other and synchronize their execution.</p>
 
       
-      <span class="pagenumber">17</span>
+      <span class="pagenumber">19</span>
       </article>
   
   
@@ -528,22 +588,21 @@ P - processor, a resource that is required to execute Go code.
 <span num="9">}</span>
 <span num="10"></span>
 <span num="11">func main() {</span>
-<span num="12"></span>
-<span num="13">    messages := make(chan string)</span>
-<span num="14">    go f(messages)</span>
-<span num="15"></span>
-<span num="16">    msg := &lt;-messages</span>
-<span num="17">    fmt.Println(&#34;First:&#34;, msg)</span>
-<span num="18">    msg = &lt;-messages</span>
-<span num="19">    fmt.Println(&#34;Second:&#34;, msg)</span>
-<span num="20">    msg = &lt;-messages</span>
-<span num="21">    fmt.Println(&#34;Third:&#34;, msg)</span>
-<span num="22">}</span>
+<span num="12">    messages := make(chan string)</span>
+<span num="13">    go f(messages)</span>
+<span num="14"></span>
+<span num="15">    msg := &lt;-messages</span>
+<span num="16">    fmt.Println(&#34;First:&#34;, msg)</span>
+<span num="17">    msg = &lt;-messages</span>
+<span num="18">    fmt.Println(&#34;Second:&#34;, msg)</span>
+<span num="19">    msg = &lt;-messages</span>
+<span num="20">    fmt.Println(&#34;Third:&#34;, msg)</span>
+<span num="21">}</span>
 </pre>
 </div>
 
       
-      <span class="pagenumber">18</span>
+      <span class="pagenumber">20</span>
       </article>
   
   
@@ -574,7 +633,39 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">19</span>
+      <span class="pagenumber">21</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Select</h3>
+        <p>Waiting for a channel to receive a message:</p>
+
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import (</span>
+<span num="4">    &#34;fmt&#34;</span>
+<span num="5">    &#34;time&#34;</span>
+<span num="6">)</span>
+<span num="7"></span>
+<span num="8">func main() {</span>
+<span num="9">    resultsChan := make(chan string)</span>
+<span num="10"></span>
+<span num="11">    select {</span>
+<span num="12">    case result := &lt;-resultsChan:</span>
+<span num="13">        fmt.Println(result)</span>
+<span num="14">    case &lt;-time.After(1 * time.Second):</span>
+<span num="15">        fmt.Println(&#34;Timeout&#34;)</span>
+<span num="16">    }</span>
+<span num="17">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">22</span>
       </article>
   
   
@@ -597,7 +688,7 @@ P - processor, a resource that is required to execute Go code.
 </ul>
 
       
-      <span class="pagenumber">20</span>
+      <span class="pagenumber">23</span>
       </article>
   
   
@@ -633,7 +724,79 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">21</span>
+      <span class="pagenumber">24</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Garbage Collection</h3>
+        <ul>
+<li>The runtime library implements garbage collection, concurrency, stack management, and other critical features of the Go language.</li>
+<li>Via <code>GOGC</code> the garbage collector can be controlled (total heap size relative to reachable objects).</li>
+<li>There is no separate virtual machine.</li>
+</ul>
+
+      
+      <span class="pagenumber">25</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Compilation - Under the hood</h3>
+        <p class="link"><a href="https://github.com/golang/go/tree/master/src/cmd/compile" target="_blank">github.com/golang/go/tree/master/src/cmd/compile</a></p><p>Go programs are compiled ahead of time to native machine code</p>
+<ol>
+<li>Parsing</li>
+<li>Type-checking and AST transformations</li>
+<li>Generic SSA (Static Single Assignment)</li>
+<li>Generating machine code</li>
+</ol>
+
+      
+      <span class="pagenumber">26</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Compilation - Choose your target</h3>
+        <p><strong>One source - Many targets</strong></p>
+<ul>
+<li><code>GOOS=linux</code> - <code>GOARCH=arm</code></li>
+<li><code>GOOS=linux</code> - <code>GOARCH=amd64</code></li>
+<li><code>GOOS=linux</code> - <code>GOARCH=ppc64le</code></li>
+<li><code>GOOS=windows</code> - <code>GOARCH=amd64</code></li>
+<li><code>GOOS=darwin</code> - <code>GOARCH=amd64</code></li>
+</ul>
+<p><em>Go is statically compiled down to its target’s native machine and mostly outperforms its virtualized (e.g. Java, Kotlin) and interpreted (e.g. JavaScript) counterparts.</em></p>
+
+      
+      <span class="pagenumber">27</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Formatting</h3>
+        <ul>
+<li><code>gofmt</code> is an auto-formatter</li>
+<li>Formatted code is
+<ul>
+<li>easier to <strong>write</strong></li>
+<li>easier to <strong>read</strong></li>
+<li>easier to <strong>maintain</strong></li>
+<li><strong>uncontroversial</strong></li>
+</ul>
+</li>
+</ul>
+
+      
+      <span class="pagenumber">28</span>
       </article>
   
   
@@ -647,7 +810,7 @@ P - processor, a resource that is required to execute Go code.
 </div>
 
       
-      <span class="pagenumber">22</span>
+      <span class="pagenumber">29</span>
       </article>
   
   
