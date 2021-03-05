@@ -2,9 +2,9 @@
 
 ## Run locally
 
-To run the program for testing use `go run main.go`.
+To run the program for testing use `go run ./cmd/api/main.go`.
 
-To create a native executable run `go build` and then execute the program `./helloWorldAPI`.
+To create a native executable run `go build ./...` and then execute the program `./api`.
 
 ## Build container image
 
