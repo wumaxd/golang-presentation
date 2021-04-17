@@ -1,0 +1,34 @@
+replicaCount: 1
+
+container:
+  image: image-registry.openshift-image-registry.svc:5000/demo-hello-world-pipeline/go-test-image:latest
+  port: 8080
+
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
