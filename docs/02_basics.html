@@ -625,28 +625,9 @@ P - processor, a resource that is required to execute Go code.
       <article >
       
         <h3>Select</h3>
-        <p>Waiting for a channel to receive a message:</p>
+        <p>Wait on multiple channel operations:</p>
 
-  <div class="code playground" >
-<pre><span num="1">package main</span>
-<span num="2"></span>
-<span num="3">import (</span>
-<span num="4">    &#34;fmt&#34;</span>
-<span num="5">    &#34;time&#34;</span>
-<span num="6">)</span>
-<span num="7"></span>
-<span num="8">func main() {</span>
-<span num="9">    resultsChan := make(chan string)</span>
-<span num="10"></span>
-<span num="11">    select {</span>
-<span num="12">    case result := &lt;-resultsChan:</span>
-<span num="13">        fmt.Println(result)</span>
-<span num="14">    case &lt;-time.After(1 * time.Second):</span>
-<span num="15">        fmt.Println(&#34;Timeout&#34;)</span>
-<span num="16">    }</span>
-<span num="17">}</span>
-</pre>
-</div>
+<iframe src="https://play.golang.org/p/TedpdASIoif" height="550" width="900"></iframe>
 
       
       <span class="pagenumber">22</span>
