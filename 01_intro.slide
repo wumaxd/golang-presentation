@@ -1,10 +1,7 @@
 # Intro to Go
 
-Maximilian Schönenberg
-Master-Student - Cloud & Security, IBM Österreich
-
-Benjamin Waldher
-Externer Mitarbeiter im CIC beim Cloud Native Team
+Maximilian Wurzer
+Advisory IT Architect, IBM Deutschland
 
 ## Basic facts about Go
 
@@ -18,6 +15,15 @@ Famous software in Go:
 - Docker, Kubernetes (OpenShift, IKS, etc.)
 - InfluxDB, TiDB, CockroachDB
 - Mattermost, Terraform, Hugo
+
+## Go Developer Survey 2020
+
+Excerpt from the Go Developer Survey: <https://go.dev/blog/survey2020-results>
+
+- Go usage is expanding in the workplace and enterprise with 76% of respondents using Go at work and 66% saying Go is critical to their company’s success.
+- Overall satisfaction is high with 92% of respondents being satisfied using Go.
+- Respondents reported upgrading promptly to the latest Go version, with 76% in the first 5 months.
+- Go continues to be heavily used for APIs, CLIs, Web, DevOps & Data Processing.
 
 ## Hello World
 

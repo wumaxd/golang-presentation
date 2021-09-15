@@ -1,10 +1,7 @@
 # Basics
 
-Maximilian Schönenberg
-Master-Student - Cloud & Security, IBM Österreich
-
 Maximilian Wurzer
-Senior Application Consultant, IBM Deutschland
+Advisory IT Architect, IBM Deutschland
 
 ## Types and data structures
 
@@ -159,9 +156,10 @@ A `goroutine` is assigned to a Thread which is assigned to a physical CPU.
 
 ## Select
 
-Waiting for a channel to receive a message:
+Wait on multiple channel operations:
 
-.play presentation_code/basicsSelect.go
+.iframe https://play.golang.org/p/TedpdASIoif 550 900
+//.play presentation_code/basicsSelect.go
 
 
 
